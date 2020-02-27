@@ -16,12 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        let mainNavigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController
 
         self.window = self.window ?? UIWindow()
-        self.window!.rootViewController = loginViewController
-        self.window?.addSubview(loginViewController!.view)
-        self.window?.bringSubviewToFront(loginViewController!.view)
+        self.window!.rootViewController = mainNavigationController
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

@@ -117,16 +117,14 @@
                                         <rect key="frame" x="0.0" y="225" width="294" height="30"/>
                                         <state key="normal" title="Forgot Password"/>
                                         <connections>
-                                            <action selector="forgotPasswordButt:" destination="RND-K0-ivf" eventType="touchUpInside" id="oux-Ck-BRD"/>
-                                            <segue destination="siV-Qp-B8J" kind="show" id="C7m-Aa-ecU"/>
+                                            <segue destination="siV-Qp-B8J" kind="show" id="Uom-lw-ZqD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-I8-JRk">
                                         <rect key="frame" x="0.0" y="280" width="294" height="30"/>
                                         <state key="normal" title="Register"/>
                                         <connections>
-                                            <action selector="registerButt:" destination="RND-K0-ivf" eventType="touchUpInside" id="Xod-NW-Iue"/>
-                                            <segue destination="Tte-43-R2K" kind="show" id="6Zx-3r-wXU"/>
+                                            <segue destination="Tte-43-R2K" kind="show" id="8S8-8D-n9j"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -168,7 +166,7 @@
         <!--Register-->
         <scene sceneID="5Iy-P2-nuK">
             <objects>
-                <viewController storyboardIdentifier="RegisterController" title="Register" id="Tte-43-R2K" customClass="RegisterViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" title="Register" id="Tte-43-R2K" customClass="RegisterViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHb-F9-gLW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,22 +326,22 @@
         <!--Forgot Password-->
         <scene sceneID="PYc-qx-Fr0">
             <objects>
-                <viewController id="siV-Qp-B8J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" title="Forgot Password" id="siV-Qp-B8J" customClass="ForgotPasswordViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7b-JK-NWT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="gzJ-Ia-Y3F">
-                                <rect key="frame" x="60" y="168" width="294" height="165.5"/>
+                                <rect key="frame" x="40" y="168" width="334" height="150.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taK-tO-8i1">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="LightBloe"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-FU-V5d" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="39" width="294" height="33"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
@@ -363,13 +361,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsb-v1-Olm">
-                                        <rect key="frame" x="0.0" y="75.5" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvD-R2-TfQ" customClass="CornerButton" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="125.5" width="294" height="40"/>
+                                        <rect key="frame" x="0.0" y="110.5" width="334" height="40"/>
                                         <color key="backgroundColor" name="LightBloe"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BYZ-da-86I"/>
@@ -398,30 +396,33 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="aa9-FU-V5d" secondAttribute="height" multiplier="1.21212" id="O1E-SJ-imJ"/>
-                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="Hsb-v1-Olm" secondAttribute="height" multiplier="0.8" id="ZYk-HO-PJv"/>
+                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="aa9-FU-V5d" secondAttribute="height" id="O1E-SJ-imJ"/>
+                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="Hsb-v1-Olm" secondAttribute="height" id="ZYk-HO-PJv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gzJ-Ia-Y3F" firstAttribute="top" secondItem="Kwb-in-Jbd" secondAttribute="top" constant="80" id="11g-aY-8xN"/>
-                            <constraint firstItem="Kwb-in-Jbd" firstAttribute="trailing" secondItem="gzJ-Ia-Y3F" secondAttribute="trailing" constant="60" id="sNR-GE-JfU"/>
-                            <constraint firstItem="gzJ-Ia-Y3F" firstAttribute="leading" secondItem="Kwb-in-Jbd" secondAttribute="leading" constant="60" id="w3t-mg-V1a"/>
+                            <constraint firstItem="Kwb-in-Jbd" firstAttribute="trailing" secondItem="gzJ-Ia-Y3F" secondAttribute="trailing" constant="40" id="sNR-GE-JfU"/>
+                            <constraint firstItem="gzJ-Ia-Y3F" firstAttribute="leading" secondItem="Kwb-in-Jbd" secondAttribute="leading" constant="40" id="w3t-mg-V1a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kwb-in-Jbd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Forgot Password" id="w8F-nN-cNt"/>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="w8F-nN-cNt">
+                        <barButtonItem key="backBarButtonItem" title="Login" id="KKU-ZB-sdJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbL-5u-ZOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1635" y="669"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="bIo-6D-arK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="N9g-yn-18W" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="N9g-yn-18W" customClass="MainNavigationController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nqC-G6-xgL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

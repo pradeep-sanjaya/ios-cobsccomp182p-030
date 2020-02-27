@@ -8,23 +8,42 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //addNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    */
+    
+    func addNavigationBar() {
+        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height:44))
+
+        navigationBar.backgroundColor = UIColor.white
+
+        // Create a navigation item with a title
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Title"
+
+        // Create left and right button for navigation item
+         let leftButton =  UIBarButtonItem(title: "Login", style:   .plain, target: self, action: #selector(navigationBackButt(_:)))
+
+        // Create two buttons for the navigation item
+        navigationItem.leftBarButtonItem = leftButton
+
+        // Assign the navigation item to the navigation bar
+        navigationBar.items = [navigationItem]
+
+        // Make the navigation bar a subview of the current view controller
+        self.view.addSubview(navigationBar)
+    }
+    
+    @objc func navigationBackButt(_ sender: UIBarButtonItem) {
+
+    }
 
 }

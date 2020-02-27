@@ -10,7 +10,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
-class LoginViewController: UIViewController, LoginButtonDelegate {
+class LoginViewController: UIViewController, LoginButtonDelegate, UITextFieldDelegate {
         
     /* Views */
     @IBOutlet weak var emailTxt: UITextField!
@@ -19,14 +19,43 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
-        let button = FBLoginButton(permissions: [.publicProfile, .email])
-        button.delegate = self
-        button.center = view.center
-        view.addSubview(button)
-        */
+        self.emailTxt.delegate = self
+        self.passwordTxt.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    // MARK - Text fireld deligate
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        // Try to find next responder
+        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder?
+
+        if nextResponder != nil {
+            // Found next responder, so set it
+            nextResponder?.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard
+            textField.resignFirstResponder()
+        }
+
+        return false
+            
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    
+    // MARK - Actions
     @IBAction func loginButt(_ sender: UIButton) {
         
     }
@@ -41,16 +70,30 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         }
     }
     
-    @IBAction func forgotPasswordButt(_ sender: UIButton) {
+    @IBAction func getInfoAction(_ sender: UIButton) {
+        
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: ["email"], from: self) {
+            (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : LoginManagerLoginResult = result!
+                
+                if (result?.isCancelled)!{
+                    return
+                }
+                
+                if (fbloginresult.grantedPermissions.contains("email")) {
+                    self.getFBUserData()
+                }
+            }
+        }
         
     }
-    
-    @IBAction func registerButt(_ sender: UIButton) {
-//        let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-//        let registerViewController = storyboard.instantiateViewController(withIdentifier: "RegisterController")
-//        self.navigationController?.pushViewController(registerViewController, animated: true)
-    }
-    
+
+
+
+
+    // MARK - LoginButtonDelegate methods
     func loginManagerDidComplete(_ result: LoginResult) {
         
         var title = ""
@@ -84,26 +127,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("Did logout via LoginButton")
-    }
-    
-    @IBAction func getInfoAction(_ sender: UIButton) {
-        
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions: ["email"], from: self) {
-            (result, error) -> Void in
-            if (error == nil){
-                let fbloginresult : LoginManagerLoginResult = result!
-                
-                if (result?.isCancelled)!{
-                    return
-                }
-                
-                if (fbloginresult.grantedPermissions.contains("email")) {
-                    self.getFBUserData()
-                }
-            }
-        }
-        
     }
     
     func getFBUserData() {
