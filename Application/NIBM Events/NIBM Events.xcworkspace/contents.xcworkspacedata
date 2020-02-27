@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NIBM Events.xcodeproj">
+      location = "group:../CornerUI/CornerUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/pradeep/Desktop/coventry/ios_app_development/course_work/ios-cobsccomp182p-030/Application/NIBM Events/NIBM Events.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
