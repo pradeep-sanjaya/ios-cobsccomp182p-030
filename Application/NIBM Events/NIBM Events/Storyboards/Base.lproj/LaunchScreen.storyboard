@@ -15,17 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="nqI-5b-rGa">
-                                <rect key="frame" x="71" y="256" width="273" height="190"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="nqI-5b-rGa">
+                                <rect key="frame" x="70.5" y="358" width="273" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="273" id="8hh-9L-Dhk"/>
+                                    <constraint firstAttribute="height" constant="190" id="kYC-Gh-NYi"/>
+                                </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nqI-5b-rGa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="212" id="NW9-cy-rp3"/>
-                            <constraint firstAttribute="trailing" secondItem="nqI-5b-rGa" secondAttribute="trailing" constant="60" id="XUi-iG-ZPB"/>
-                            <constraint firstItem="nqI-5b-rGa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="feM-2o-yLU"/>
-                            <constraint firstItem="nqI-5b-rGa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="60" id="kBJ-Ve-7cO"/>
+                            <constraint firstItem="nqI-5b-rGa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qtb-dx-Fkj"/>
+                            <constraint firstItem="nqI-5b-rGa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tuJ-aV-0Rs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

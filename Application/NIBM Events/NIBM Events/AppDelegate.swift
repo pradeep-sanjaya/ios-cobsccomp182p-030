@@ -10,12 +10,16 @@ import UIKit
 import CoreData
 import FacebookCore
 import FacebookShare
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // firebase configurations
+        FirebaseApp.configure()
+
         // fb sdk configuration
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 

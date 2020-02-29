@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bqV-3V-bNj">
-                                <rect key="frame" x="60" y="492" width="294" height="310"/>
+                                <rect key="frame" x="40" y="512" width="334" height="310"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXX-dq-TlS" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sanjayangp@gmail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXX-dq-TlS" customClass="CornerTextField" customModule="CornerUI">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
                                         <userDefinedRuntimeAttributes>
@@ -39,28 +39,18 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejB-7F-bwu" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="55" width="294" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456789" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejB-7F-bwu">
+                                        <rect key="frame" x="0.0" y="55" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="DarkBlue"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKY-yc-lE5" customClass="CornerButton" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="110" width="294" height="40"/>
+                                        <rect key="frame" x="0.0" y="110" width="334" height="40"/>
                                         <color key="backgroundColor" name="LightBloe"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" name="White"/>
@@ -85,12 +75,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-LI-oyi" customClass="CornerButton" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="165" width="294" height="40"/>
+                                        <rect key="frame" x="0.0" y="165" width="334" height="40"/>
                                         <color key="backgroundColor" name="LightBloe"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="wJv-qQ-vvf"/>
                                         </constraints>
-                                        <state key="normal" title="Facebook">
+                                        <state key="normal" title="Continue with Facebook">
                                             <color key="titleColor" name="White"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
@@ -114,14 +104,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niS-6D-bcu">
-                                        <rect key="frame" x="0.0" y="225" width="294" height="30"/>
+                                        <rect key="frame" x="0.0" y="225" width="334" height="30"/>
                                         <state key="normal" title="Forgot Password"/>
                                         <connections>
-                                            <segue destination="siV-Qp-B8J" kind="show" id="Uom-lw-ZqD"/>
+                                            <segue destination="siV-Qp-B8J" kind="show" id="wh0-bZ-rQ3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-I8-JRk">
-                                        <rect key="frame" x="0.0" y="280" width="294" height="30"/>
+                                        <rect key="frame" x="0.0" y="280" width="334" height="30"/>
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <segue destination="Tte-43-R2K" kind="show" id="8S8-8D-n9j"/>
@@ -135,21 +125,21 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xa2-uh-rc4">
-                                <rect key="frame" x="60" y="268" width="294" height="204"/>
+                                <rect key="frame" x="70.5" y="243" width="273" height="190"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Xa2-uh-rc4" secondAttribute="height" constant="90" id="OFS-Xi-eWI"/>
+                                    <constraint firstAttribute="width" constant="273" id="Q3a-Hc-ygy"/>
+                                    <constraint firstAttribute="height" constant="190" id="l2h-c2-uC8"/>
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Xa2-uh-rc4" firstAttribute="leading" secondItem="TNA-9E-gMV" secondAttribute="leading" constant="60" id="7u2-jP-WeJ"/>
-                            <constraint firstItem="bqV-3V-bNj" firstAttribute="leading" secondItem="TNA-9E-gMV" secondAttribute="leading" constant="60" id="KgI-2M-lsW"/>
-                            <constraint firstItem="TNA-9E-gMV" firstAttribute="bottom" secondItem="bqV-3V-bNj" secondAttribute="bottom" constant="60" id="NFk-Os-TLY"/>
-                            <constraint firstItem="TNA-9E-gMV" firstAttribute="trailing" secondItem="Xa2-uh-rc4" secondAttribute="trailing" constant="60" id="RUa-VR-ibF"/>
-                            <constraint firstItem="bqV-3V-bNj" firstAttribute="top" secondItem="Xa2-uh-rc4" secondAttribute="bottom" constant="20" id="i6e-vm-kHm"/>
-                            <constraint firstItem="TNA-9E-gMV" firstAttribute="trailing" secondItem="bqV-3V-bNj" secondAttribute="trailing" constant="60" id="qlF-MX-Jdg"/>
+                            <constraint firstItem="bqV-3V-bNj" firstAttribute="leading" secondItem="TNA-9E-gMV" secondAttribute="leading" constant="40" id="KgI-2M-lsW"/>
+                            <constraint firstItem="JXX-dq-TlS" firstAttribute="top" secondItem="Xa2-uh-rc4" secondAttribute="bottom" constant="79" id="LjF-zh-Vbo"/>
+                            <constraint firstItem="TNA-9E-gMV" firstAttribute="bottom" secondItem="bqV-3V-bNj" secondAttribute="bottom" constant="40" id="NFk-Os-TLY"/>
+                            <constraint firstItem="TNA-9E-gMV" firstAttribute="trailing" secondItem="bqV-3V-bNj" secondAttribute="trailing" constant="40" id="qlF-MX-Jdg"/>
+                            <constraint firstItem="Xa2-uh-rc4" firstAttribute="centerX" secondItem="JXX-dq-TlS" secondAttribute="centerX" id="yfP-ov-8gK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TNA-9E-gMV"/>
                     </view>
@@ -172,16 +162,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9oJ-pT-dKb">
-                                <rect key="frame" x="60" y="168" width="294" height="500"/>
+                                <rect key="frame" x="40" y="128" width="334" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBK-s1-Kjh">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="LightBloe"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nN-vt-tJQ" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="50" width="294" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nN-vt-tJQ" customClass="CornerTextField" customModule="CornerUI">
+                                        <rect key="frame" x="0.0" y="40" width="334" height="40"/>
                                         <color key="textColor" name="Black"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -202,13 +192,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="num-Ak-sRz">
-                                        <rect key="frame" x="0.0" y="100" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="80" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="LightBloe"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A09-Ov-tDg" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="150" width="294" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A09-Ov-tDg" customClass="CornerTextField" customModule="CornerUI">
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -228,66 +218,49 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-5p-qby">
-                                        <rect key="frame" x="0.0" y="200" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="160" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="LightBloe"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5B-A0-yzX" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="250" width="294" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5B-A0-yzX">
+                                        <rect key="frame" x="0.0" y="200" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="DarkBlue"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retype Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAo-ey-8CC">
-                                        <rect key="frame" x="0.0" y="300" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="240" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="LightBloe"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-Ux-21B" customClass="CornerTextField" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="350" width="294" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-Ux-21B">
+                                        <rect key="frame" x="0.0" y="280" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="DarkBlue"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-Fc-DHA">
-                                        <rect key="frame" x="0.0" y="400" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="320" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQm-7V-JTY" customClass="CornerButton" customModule="CornerUI">
-                                        <rect key="frame" x="0.0" y="450" width="294" height="50"/>
+                                        <rect key="frame" x="0.0" y="360" width="334" height="40"/>
                                         <color key="backgroundColor" name="LightBloe"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="QyW-Xh-mMd"/>
+                                        </constraints>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" name="White"/>
                                         </state>
@@ -303,21 +276,30 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="registerAction:" destination="Tte-43-R2K" eventType="touchUpInside" id="ybR-ro-oaQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9oJ-pT-dKb" firstAttribute="top" secondItem="6zu-AO-9hg" secondAttribute="top" constant="80" id="07u-fM-1Xw"/>
-                            <constraint firstItem="9oJ-pT-dKb" firstAttribute="leading" secondItem="6zu-AO-9hg" secondAttribute="leading" constant="60" id="TKf-er-uMU"/>
-                            <constraint firstItem="6zu-AO-9hg" firstAttribute="trailing" secondItem="9oJ-pT-dKb" secondAttribute="trailing" constant="60" id="bPb-Qd-SFc"/>
+                            <constraint firstItem="9oJ-pT-dKb" firstAttribute="top" secondItem="6zu-AO-9hg" secondAttribute="top" constant="40" id="07u-fM-1Xw"/>
+                            <constraint firstItem="9oJ-pT-dKb" firstAttribute="leading" secondItem="6zu-AO-9hg" secondAttribute="leading" constant="40" id="TKf-er-uMU"/>
+                            <constraint firstItem="6zu-AO-9hg" firstAttribute="trailing" secondItem="9oJ-pT-dKb" secondAttribute="trailing" constant="40" id="bPb-Qd-SFc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6zu-AO-9hg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="zq8-jF-zOt">
                         <barButtonItem key="backBarButtonItem" title="Login" id="dgI-MN-FDe"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTxt" destination="A09-Ov-tDg" id="3oK-3D-u3i"/>
+                        <outlet property="nameTxt" destination="4nN-vt-tJQ" id="Wsn-4D-sT3"/>
+                        <outlet property="passwordRetypeTxt" destination="Hm3-Ux-21B" id="OZY-9l-Wt6"/>
+                        <outlet property="passwordTxt" destination="X5B-A0-yzX" id="Grq-RS-wgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vV-yX-B28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,7 +354,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BYZ-da-86I"/>
                                         </constraints>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" title="Reset Password">
                                             <color key="titleColor" name="White"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -391,13 +373,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="loginButt:" destination="RND-K0-ivf" eventType="touchUpInside" id="oL2-KV-WN3"/>
+                                            <action selector="resetPasswordAction:" destination="siV-Qp-B8J" eventType="touchUpInside" id="CgW-57-Rgw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="aa9-FU-V5d" secondAttribute="height" id="O1E-SJ-imJ"/>
-                                    <constraint firstItem="AvD-R2-TfQ" firstAttribute="height" secondItem="Hsb-v1-Olm" secondAttribute="height" id="ZYk-HO-PJv"/>
+                                    <constraint firstItem="aa9-FU-V5d" firstAttribute="height" secondItem="AvD-R2-TfQ" secondAttribute="height" id="2rE-sY-n1A"/>
+                                    <constraint firstItem="Hsb-v1-Olm" firstAttribute="height" secondItem="AvD-R2-TfQ" secondAttribute="height" id="8gM-2B-3t5"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -412,6 +394,9 @@
                     <navigationItem key="navigationItem" title="Forgot Password" id="w8F-nN-cNt">
                         <barButtonItem key="backBarButtonItem" title="Login" id="KKU-ZB-sdJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTxt" destination="aa9-FU-V5d" id="kIj-h8-gAv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbL-5u-ZOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,10 +431,10 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="DarkBlue">
-            <color red="0.23588362339999999" green="0.29429966210000003" blue="0.60787266490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.23600000143051147" green="0.29399999976158142" blue="0.60799998044967651" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LightBloe">
-            <color red="0.13266521692276001" green="0.30415019392967224" blue="0.63718581199645996" alpha="0.73361074924468994" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.13300000131130219" green="0.30399999022483826" blue="0.63700002431869507" alpha="0.73400002717971802" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

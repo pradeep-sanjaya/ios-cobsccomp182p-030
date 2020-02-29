@@ -6,17 +6,26 @@ target 'NIBM Events' do
   use_frameworks!
 
   # Pods for NIBM Events
-  pod 'SwiftyJSON'
+  
+  # firebase
+  pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
-  pod 'Kingfisher', '~> 5.9'
+  pod 'Firebase/Analytics'
+
   pod 'GoogleSignIn'
+  
+  # facebook
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-
+  
+  pod 'ReachabilitySwift'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher', '~> 5.9'
+  
   target 'NIBM EventsTests' do
     inherit! :search_paths
     # Pods for testing

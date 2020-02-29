@@ -78,11 +78,11 @@ public class CornerTextField: UITextField {
     }
     
     func setPlaceholderColor() {
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 91, green: 91, blue: 91, alpha: 1)])
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(named: "LightBlue") ?? UIColor.lightGray])
     }
     
     func setColor() {
-        self.textColor = UIColor.white
+        self.textColor = UIColor.init(named: "Black")
     }
     
     struct Constants {

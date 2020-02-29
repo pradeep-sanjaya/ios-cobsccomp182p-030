@@ -23,6 +23,17 @@
 		2757C7A924066C380065D26E /* NIBM_EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C7A824066C380065D26E /* NIBM_EventsUITests.swift */; };
 		2757C7B924067DAA0065D26E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2757C7B824067DAA0065D26E /* Login.storyboard */; };
 		2757C7BB24067E710065D26E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C7BA24067E710065D26E /* LoginViewController.swift */; };
+		27637E3C240A74F1009E3C32 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27637E3B240A74F1009E3C32 /* Colors.xcassets */; };
+		27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */; };
+		27637E40240A833F009E3C32 /* Bundle+AppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E3F240A833F009E3C32 /* Bundle+AppName.swift */; };
+		27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACC6052408AD5F00AB1690 /* Validator.swift */; };
+		27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D166492408DFF90081FCEA /* UIViewUtil.swift */; };
+		27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1664B2408E2E00081FCEA /* BaseViewController.swift */; };
+		27D16653240915770081FCEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27D16652240915770081FCEA /* GoogleService-Info.plist */; };
+		27D16655240917550081FCEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D16654240917550081FCEA /* HomeViewController.swift */; };
+		27D1665824091B830081FCEA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1665724091B830081FCEA /* User.swift */; };
+		27D1665B240925300081FCEA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1665A240925300081FCEA /* UserService.swift */; };
+		27D1665E240930570081FCEA /* UserDefaults+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1665D240930570081FCEA /* UserDefaults+Dictionary.swift */; };
 		527F2F95BF963528F5D6F71B /* Pods_NIBM_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A9CD4DD800B81A7AC94C04 /* Pods_NIBM_Events.framework */; };
 		843183184275B83D9F7304F8 /* Pods_NIBM_EventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA38FB515D15FF99D3826C4 /* Pods_NIBM_EventsTests.framework */; };
 		FD6F877826D23591C87A0599 /* Pods_NIBM_Events_NIBM_EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82BAF35F15EE4FFF1729C8 /* Pods_NIBM_Events_NIBM_EventsUITests.framework */; };
@@ -83,6 +94,17 @@
 		2757C7AA24066C380065D26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2757C7B824067DAA0065D26E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2757C7BA24067E710065D26E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27637E3B240A74F1009E3C32 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		27637E3F240A833F009E3C32 /* Bundle+AppName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+AppName.swift"; sourceTree = "<group>"; };
+		27ACC6052408AD5F00AB1690 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		27D166492408DFF90081FCEA /* UIViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtil.swift; sourceTree = "<group>"; };
+		27D1664B2408E2E00081FCEA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		27D16652240915770081FCEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27D16654240917550081FCEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		27D1665724091B830081FCEA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		27D1665A240925300081FCEA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		27D1665D240930570081FCEA /* UserDefaults+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Dictionary.swift"; sourceTree = "<group>"; };
 		2A82BAF35F15EE4FFF1729C8 /* Pods_NIBM_Events_NIBM_EventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_Events_NIBM_EventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9CD4DD800B81A7AC94C04 /* Pods_NIBM_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CC283F1C3D34E3EE0EE6B7 /* Pods-NIBM Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM Events.debug.xcconfig"; path = "Target Support Files/Pods-NIBM Events/Pods-NIBM Events.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,12 +182,15 @@
 			isa = PBXGroup;
 			children = (
 				2757C7B7240679820065D26E /* Controllers */,
+				27D1665624091B690081FCEA /* Models */,
+				27D1665C2409303B0081FCEA /* Extensions */,
+				27D16659240925030081FCEA /* Services */,
+				27ACC6042408AD3A00AB1690 /* Utils */,
 				2757C7B62406791F0065D26E /* Storyboards */,
+				27D1664D24090C960081FCEA /* Supporting Files */,
 				2757C78324066C350065D26E /* AppDelegate.swift */,
 				2757C78524066C350065D26E /* SceneDelegate.swift */,
 				2757C78724066C350065D26E /* ViewController.swift */,
-				2757C78F24066C380065D26E /* Assets.xcassets */,
-				2757C79424066C380065D26E /* Info.plist */,
 				2757C78C24066C350065D26E /* NIBM_Events.xcdatamodeld */,
 			);
 			path = "NIBM Events";
@@ -206,8 +231,56 @@
 				2756089B24074EBD00A1CF82 /* RegisterViewController.swift */,
 				2756089D24076A2700A1CF82 /* MainNavigationController.swift */,
 				2756089F24076EBA00A1CF82 /* ForgotPasswordViewController.swift */,
+				27D1664B2408E2E00081FCEA /* BaseViewController.swift */,
+				27D16654240917550081FCEA /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27ACC6042408AD3A00AB1690 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				27ACC6052408AD5F00AB1690 /* Validator.swift */,
+				27D166492408DFF90081FCEA /* UIViewUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		27D1664D24090C960081FCEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2757C78F24066C380065D26E /* Assets.xcassets */,
+				27637E3B240A74F1009E3C32 /* Colors.xcassets */,
+				27D16652240915770081FCEA /* GoogleService-Info.plist */,
+				2757C79424066C380065D26E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D1665624091B690081FCEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27D1665724091B830081FCEA /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27D16659240925030081FCEA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27D1665A240925300081FCEA /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		27D1665C2409303B0081FCEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27D1665D240930570081FCEA /* UserDefaults+Dictionary.swift */,
+				27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */,
+				27637E3F240A833F009E3C32 /* Bundle+AppName.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DB5A08687110C6F6B5C8690F /* Pods */ = {
@@ -337,6 +410,8 @@
 			files = (
 				2757C7B924067DAA0065D26E /* Login.storyboard in Resources */,
 				2757C79324066C380065D26E /* LaunchScreen.storyboard in Resources */,
+				27D16653240915770081FCEA /* GoogleService-Info.plist in Resources */,
+				27637E3C240A74F1009E3C32 /* Colors.xcassets in Resources */,
 				2757C79024066C380065D26E /* Assets.xcassets in Resources */,
 				2757C78B24066C350065D26E /* Main.storyboard in Resources */,
 			);
@@ -500,14 +575,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D1665B240925300081FCEA /* UserService.swift in Sources */,
+				27D1665824091B830081FCEA /* User.swift in Sources */,
 				275608A024076EBA00A1CF82 /* ForgotPasswordViewController.swift in Sources */,
+				27637E40240A833F009E3C32 /* Bundle+AppName.swift in Sources */,
+				27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */,
 				2757C78824066C350065D26E /* ViewController.swift in Sources */,
 				2757C78424066C350065D26E /* AppDelegate.swift in Sources */,
 				2757C78E24066C350065D26E /* NIBM_Events.xcdatamodeld in Sources */,
+				27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */,
 				2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */,
+				27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */,
 				2756089E24076A2700A1CF82 /* MainNavigationController.swift in Sources */,
 				2757C7BB24067E710065D26E /* LoginViewController.swift in Sources */,
+				27D1665E240930570081FCEA /* UserDefaults+Dictionary.swift in Sources */,
+				27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */,
 				2757C78624066C350065D26E /* SceneDelegate.swift in Sources */,
+				27D16655240917550081FCEA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9293X7J567;
-				INFOPLIST_FILE = "NIBM Events/Info.plist";
+				INFOPLIST_FILE = "NIBM Events/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,7 +786,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9293X7J567;
-				INFOPLIST_FILE = "NIBM Events/Info.plist";
+				INFOPLIST_FILE = "NIBM Events/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

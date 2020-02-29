@@ -1,15 +1,10 @@
-//
-//  ForgotPasswordViewController.swift
-//  NIBM Events
-//
-//  Created by Pradeep Sanjaya on 2/27/20.
-//  Copyright © 2020 Pradeep Sanjaya. All rights reserved.
-//
-
 import UIKit
+import Firebase
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: BaseViewController {
 
+    @IBOutlet weak var emailTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,5 +13,34 @@ class ForgotPasswordViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    @IBAction func resetPasswordAction(_ sender: UIButton) {
+        
+        validate()
+        print("email: \(emailTxt.text!)")
+        
+        Auth.auth().sendPasswordReset(withEmail: emailTxt.text!) {
+            error in
+            if error != nil {
+                print(error)
+                self.presentHideAlert(withTitle: "NIBM Events", message: "An error occurred")
+            } else {
+                self.presentHideAlert(withTitle: "NIBM Events", message: "Password reset link sent to email")
+            }
+        }
+    }
+    
+    func validate() {
+        
+        guard let email = emailTxt.text, email != "" ,
+            Validator.isValidEmail(email) else {
+            print("email is empty")
+            UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: false)
+            return
+        }
+        
+        UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: true)
 
+        print("email: \(email)")
+    }
 }
