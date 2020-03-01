@@ -20,6 +20,7 @@ class ProfileViewController: BaseViewController,
     var imagePicker: ImagePicker!
     let rootRef = Database.database().reference()
     var localUser:User!
+    let storageService = StorageService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,13 +77,29 @@ class ProfileViewController: BaseViewController,
         
         print("----- updateProfileAction -----")
         let localUser = userService.getLocalUser()
-        print("user: \(localUser)")
+        print("local user: \(localUser)")
+        var photoUrl = ""
         
-        let user = User(type: localUser.type, token: localUser.token, name: fullNameTxt.text!, email: emailTxt.text!, profileUrl: facebookProfileTxt.text!)
+        if let image = self.profileImage.image {
+            storageService.uploadUserProfile(image: image, token: localUser.token) {
+                (isSuccess, url) in
+                photoUrl = url!
+                print("url: \(url)")
+            }
+        }
         
-        userService.setLocalUser(user: user)
+        let user = User(
+            type: localUser.type,
+            token: localUser.token,
+            name: self.fullNameTxt.text!,
+            email: self.emailTxt.text!,
+            profileUrl: self.facebookProfileTxt.text!,
+            photoUrl: photoUrl
+        )
         
-        let userRef = rootRef.child(COLLECTION_USERS)
+        self.userService.setLocalUser(user: user)
+        
+        let userRef = self.rootRef.child(COLLECTION_USERS)
                 
         let firebaseUser: [String: String] = [
             USER_AUTH_TYPE: user.type.toString(),
@@ -101,6 +118,11 @@ class ProfileViewController: BaseViewController,
             print("Data saved successfully!")
           }
         }
+        
+        /*
+        let eventService = EventService()
+        eventService.create(for: self.profileImage.image!, token: user.token)
+        */
         
         /*
         userRef.childByAutoId().setValue(firebaseUser) {

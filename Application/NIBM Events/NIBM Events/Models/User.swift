@@ -44,4 +44,5 @@ struct User {
     var name: String;
     var email: String;
     var profileUrl: String;
+    var photoUrl: String;
 }

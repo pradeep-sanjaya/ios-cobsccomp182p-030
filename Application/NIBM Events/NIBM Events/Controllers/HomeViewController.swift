@@ -146,6 +146,8 @@ class HomeViewController: UIViewController,
                 
         cell.profileImage.kf.setImage(with: url)
         cell.bringSubviewToFront(cell.profileImage)
+        cell.superview?.bringSubviewToFront(cell.profileImage)
+
 
         // get event start date (for the labels on the left side of the event's image)
         let dayFormatter = DateFormatter()

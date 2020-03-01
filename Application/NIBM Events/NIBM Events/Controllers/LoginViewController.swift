@@ -254,7 +254,7 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                         */
                     }
                         
-                    let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl)
+                    let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl, photoUrl: "")
                     self.userService.setLocalUser(user: fbUser)
 
                     self.setRootViewController(name: "MainTabBar")

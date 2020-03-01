@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2704EF73240B66EC007F7573 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF72240B66EC007F7573 /* MainTabBarController.swift */; };
 		2704EF75240C0367007F7573 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF74240C0367007F7573 /* RoundedImageView.swift */; };
+		2704EF77240C1EB3007F7573 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF76240C1EB3007F7573 /* EventService.swift */; };
+		2704EF79240C2501007F7573 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF78240C2501007F7573 /* StorageService.swift */; };
 		27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; };
 		27560899240738D200A1CF82 /* CornerUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756089B24074EBD00A1CF82 /* RegisterViewController.swift */; };
@@ -99,6 +101,8 @@
 		1DA38FB515D15FF99D3826C4 /* Pods_NIBM_EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2704EF72240B66EC007F7573 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2704EF74240C0367007F7573 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		2704EF76240C1EB3007F7573 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		2704EF78240C2501007F7573 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		2756088D2407358700A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560897240738D100A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2756089B24074EBD00A1CF82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				27D1665A240925300081FCEA /* UserService.swift */,
+				2704EF76240C1EB3007F7573 /* EventService.swift */,
+				2704EF78240C2501007F7573 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -693,6 +699,7 @@
 				27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */,
 				2757C78824066C350065D26E /* ViewController.swift in Sources */,
 				27637E71240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift in Sources */,
+				2704EF77240C1EB3007F7573 /* EventService.swift in Sources */,
 				27637E6F240B3094009E3C32 /* ViewController+Hud.swift in Sources */,
 				2757C78424066C350065D26E /* AppDelegate.swift in Sources */,
 				2757C78E24066C350065D26E /* NIBM_Events.xcdatamodeld in Sources */,
@@ -710,6 +717,7 @@
 				2704EF73240B66EC007F7573 /* MainTabBarController.swift in Sources */,
 				27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */,
 				2757C78624066C350065D26E /* SceneDelegate.swift in Sources */,
+				2704EF79240C2501007F7573 /* StorageService.swift in Sources */,
 				27637E4C240AC215009E3C32 /* MainNavigationBar.swift in Sources */,
 				27D16655240917550081FCEA /* HomeViewController.swift in Sources */,
 				27637E43240AAC89009E3C32 /* Configs.swift in Sources */,

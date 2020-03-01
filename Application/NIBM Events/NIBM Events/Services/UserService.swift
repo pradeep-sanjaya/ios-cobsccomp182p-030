@@ -146,14 +146,15 @@ class UserService {
 
             return User(
                 type: authType,
-                token: userDictonary["token"]!,
-                name: userDictonary["name"]!,
-                email: userDictonary["email"]!,
-                profileUrl: userDictonary["profileUrl"]!
+                token: userDictonary["token"] ?? "",
+                name: userDictonary["name"] ?? "",
+                email: userDictonary["email"] ?? "",
+                profileUrl: userDictonary["profileUrl"] ?? "",
+                photoUrl: userDictonary["photoUrl"] ?? ""
             )
         }
         
-        return User(type: AuthType.other, token: "", name: "", email: "", profileUrl: "")
+        return User(type: AuthType.other, token: "", name: "", email: "", profileUrl: "", photoUrl: "")
 
     }
 
@@ -164,7 +165,7 @@ class UserService {
     
     public func setLocalUserWithFirebaseId(name: String, email: String, profileUrl: String) {
         let userId = self.getFirebaseUserId()
-        let user = User(type: AuthType.firebase, token: userId!, name: name, email: email, profileUrl: profileUrl)
+        let user = User(type: AuthType.firebase, token: userId!, name: name, email: email, profileUrl: profileUrl, photoUrl: "")
         self.setLocalUser(user: user)
     }
     
