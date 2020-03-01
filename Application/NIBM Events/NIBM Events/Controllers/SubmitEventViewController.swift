@@ -34,7 +34,7 @@ class SubmitEventViewController: BaseViewController,
     var startDateSelected = false
     var startDate = Date()
     var endDate = Date()
-    
+
     // MARK: - View did load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,49 +260,23 @@ class SubmitEventViewController: BaseViewController,
             showHUD()
             dismissKeyboard()
             
-            /*
-            // Save event on Parse
-            let eventsClass = PFObject(className: EVENTS_CLASS_NAME)
-            eventsClass[EVENTS_TITLE] = nameTxt.text
-            eventsClass[EVENTS_DESCRIPTION] = descriptionTxt.text
-            eventsClass[EVENTS_LOCATION] = locationTxt.text
-            eventsClass[EVENTS_COST] = costTxt.text
-            eventsClass[EVENTS_WEBSITE] = websiteTxt.text
-            eventsClass[EVENTS_IS_PENDING] = true
+            let localUser = self.userService.getLocalUser()
             
-            let keywords = nameTxt!.text!.lowercased().components(separatedBy: " ") +
-                locationTxt!.text!.lowercased().components(separatedBy: " ") +
-                descriptionTxt!.text.lowercased().components(separatedBy: " ")
+            let event = Event(
+                id: "",
+                title: nameTxt.text ?? "",
+                location: locationTxt.text ?? "",
+                description: descriptionTxt.text ?? "",
+                website: websiteTxt.text ?? "",
+                startDate: startDate,
+                endDate: endDate,
+                cost: costTxt.text ?? "",
+                image: "",
+                isPending: true,
+                keywords: "",
+                user: localUser.token)
             
-            eventsClass[EVENTS_KEYWORDS] = keywords
-            eventsClass[EVENTS_START_DATE] = startDate
-            eventsClass[EVENTS_END_DATE] = endDate
-            
-            // Save Image
-            let imageData = eventImage.image!.jpegData(compressionQuality: 0.5)
-            let imageFile = PFFileObject(name:"image.jpg", data:imageData!)
-            eventsClass[EVENTS_IMAGE] = imageFile
-            
-            eventsClass.saveInBackground { (success, error) -> Void in
-                if error == nil {
-                    self.hideHUD()
-                    
-                    let alert = UIAlertController(title: APP_NAME,
-                                                  message: "You've successfully submitted your event!\nWe'll review it as soon asap and publish it if it'll be ok",
-                                                  preferredStyle: .alert)
-                    
-                    let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                        self.openMailVC()
-                    })
-                    alert.addAction(ok)
-                    self.present(alert, animated: true, completion: nil)
-                    
-                } else {
-                    self.simpleAlert("\(error!.localizedDescription)")
-                    self.hideHUD()
-                }}
-            */
-            
+            eventService.create(event: event)
         }
         
     }

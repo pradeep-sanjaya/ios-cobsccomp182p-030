@@ -6,7 +6,9 @@ import Firebase
 class BaseViewController: UIViewController {
 
     public let userService = UserService()
-
+    public let storageService = StorageService()
+    public let eventService = EventService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

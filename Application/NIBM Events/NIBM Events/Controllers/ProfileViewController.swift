@@ -20,7 +20,6 @@ class ProfileViewController: BaseViewController,
     var imagePicker: ImagePicker!
     let rootRef = Database.database().reference()
     var localUser:User!
-    let storageService = StorageService()
     
     override func viewDidLoad() {
         super.viewDidLoad()

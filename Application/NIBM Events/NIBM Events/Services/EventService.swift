@@ -1,56 +1,42 @@
-//
-//  EventService.swift
-//  NIBM Events
-//
-//  Created by Pradeep Sanjaya on 3/1/20.
-//  Copyright © 2020 Pradeep Sanjaya. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Firebase
 import FirebaseStorage
 
 class EventService {
-    func uploadImage(_ image: UIImage, at reference: StorageReference, completion: @escaping (URL?) -> Void) {
-        // 1
-        guard let imageData = image.jpegData(compressionQuality: 0.1) else {
-            return completion(nil)
-        }
 
-        // 2
-        reference.putData(imageData, metadata: nil, completion: { (metadata, error) in
-            // 3
-            if let error = error {
-                assertionFailure(error.localizedDescription)
-                return completion(nil)
-            }
-
-            // 4
-            reference.downloadURL(completion: { (url, error) in
-                if let error = error {
-                    assertionFailure(error.localizedDescription)
-                    return completion(nil)
-                }
-                completion(url)
-            })
-        })
-    }
+    let rootRef = Database.database().reference()
+    let userService = UserService()
     
-    func create(for image: UIImage, token: String)  -> String {
-        let imageRef = Storage.storage().reference().child("users").child("\(token)).jpg")
-        var urlString:String = ""
+    func create(event: Event)  {
+        let localUser = self.userService.getLocalUser()
         
-        uploadImage(image, at: imageRef) {
-            (downloadURL) in
-            guard let downloadURL = downloadURL else {
-                return
-            }
-            
-            urlString = downloadURL.absoluteString
-            print("image url: \(urlString)")
+        let eventRef = self.rootRef.child(COLLECTION_EVENTS)
+           
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let firebaseEvent: [String: String] = [
+            EVENT_TITLE: event.title,
+            EVENT_LOCATION: event.location,
+            EVENT_DESCRIPTION: event.description,
+            EVENT_START_DATE: formatter.string(from: event.startDate),
+            EVENT_END_DATE: formatter.string(from: event.endDate),
+            EVENT_COST: event.cost,
+            EVENT_IMAGE: event.image,
+            EVENT_IS_PENDING: event.isPending.description,
+            EVENT_KEYWARDS: "",
+            EVENT_USER: localUser.token,
+        ]
+
+        eventRef.childByAutoId().setValue(firebaseEvent) {
+          (error:Error?, ref:DatabaseReference) in
+          if let error = error {
+            print("Data could not be saved: \(error).")
+          } else {
+            print(ref)
+            print("Data saved successfully!")
+          }
         }
-        
-        return urlString
     }
 }
