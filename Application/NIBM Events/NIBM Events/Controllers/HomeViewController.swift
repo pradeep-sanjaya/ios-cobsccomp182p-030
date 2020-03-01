@@ -141,21 +141,6 @@ class HomeViewController: UIViewController,
         let url = URL(string: event.image)
         cell.eventImage.kf.setImage(with: url)
         
-        /*
-        var eventsClass = PFObject(className: EVENTS_CLASS_NAME)
-        eventsClass = eventsArray[(indexPath as NSIndexPath).row]
-        
-        
-        // GET EVENT'S IMAGE
-        let imageFile = eventsClass[EVENTS_IMAGE] as? PFFileObject
-        imageFile?.getDataInBackground { (imageData, error) -> Void in
-            if error == nil {
-                if let imageData = imageData {
-                    cell.eventImage.image = UIImage(data:imageData)
-                }}}
-        
-        */
-        
         // get event start date (for the labels on the left side of the event's image)
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "dd"

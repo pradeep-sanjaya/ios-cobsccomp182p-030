@@ -53,10 +53,7 @@ class SubmitEventViewController: BaseViewController,
         
         // Clear fields button
         addClearFieldsButtonToNavigation()
-        
-        
-        // Round views corners
-        submitEventOutlet.layer.cornerRadius = 5
+
     }
     
     func addClearFieldsButtonToNavigation() {
@@ -124,6 +121,7 @@ class SubmitEventViewController: BaseViewController,
             self.datePicker.frame.origin.y = self.view.frame.size.height - self.datePicker.frame.size.height - (self.tabBarController?.tabBar.frame.size.height ?? 00)
         }, completion: { (finished: Bool) in  })
     }
+    
     func hideDatePicker() {
         UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: {
             self.datePicker.frame.origin.y = self.view.frame.size.height

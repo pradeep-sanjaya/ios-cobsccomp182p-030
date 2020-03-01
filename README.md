@@ -41,6 +41,12 @@ NIBM ID: COBSCCOMP182P-030
 - [How to use Named Color in Xcode 9](https://medium.com/bobo-shone/how-to-use-named-color-in-xcode-9-d7149d270a16)
 - [Add a button on right view of UItextfield in such way that, text should not overlap the button](https://stackoverflow.com/questions/42082339/add-a-button-on-right-view-of-uitextfield-in-such-way-that-text-should-not-over)
 
+### UIImagePickerController
+- [Picking images with UIImagePickerController in Swift 5](https://theswiftdev.com/picking-images-with-uiimagepickercontroller-in-swift-5/)
+- [Choosing Images with UIImagePickerController in Swift
+](https://www.codingexplorer.com/choosing-images-with-uiimagepickercontroller-in-swift/)
+
+
 
 
 

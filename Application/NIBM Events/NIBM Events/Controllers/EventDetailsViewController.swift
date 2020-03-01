@@ -83,21 +83,14 @@ class EventDetailsViewController: UIViewController,
         registerOutlet.layer.borderWidth = 1.5
         
         
-        
         // get event title
         self.title = "\(eventObj!.title)"
         
-        /*
         // get event image
-        let imageFile = eventObj[EVENTS_IMAGE] as? PFFileObject
-        imageFile?.getDataInBackground { (imageData, error) -> Void in
-            if error == nil {
-                if let imageData = imageData {
-                    self.eventImage.image = UIImage(data:imageData)
-                }}
-            
+        if let imageUrl = eventObj?.image {
+            let url = URL(string: imageUrl)
+            self.eventImage.kf.setImage(with: url)
         }
-        */
         
         // event description
         descrTxt.text = "\(eventObj!.description)"

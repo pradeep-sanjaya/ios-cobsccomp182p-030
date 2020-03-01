@@ -17,7 +17,7 @@ class ProfileViewController: BaseViewController,
     @IBOutlet var updateOutlet: UIButton!
     
 
-    
+    var imagePicker: ImagePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class ProfileViewController: BaseViewController,
         // Setup container ScrollView
         containerScrollView.contentSize = CGSize(width: containerScrollView.frame.size.width, height: updateOutlet.frame.origin.y + 250)
         
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     
@@ -57,7 +58,9 @@ class ProfileViewController: BaseViewController,
     }
     
     
-    
+    @IBAction func chooseImageAction(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
+    }
     
     // MARK: - Update profile
     @IBAction func updateProfileAction(_ sender: UIButton) {
@@ -118,5 +121,12 @@ class ProfileViewController: BaseViewController,
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ProfileViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        self.profileImage.image = image
     }
 }
