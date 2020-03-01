@@ -23,6 +23,7 @@ class EventService {
             EVENT_START_DATE: formatter.string(from: event.startDate),
             EVENT_END_DATE: formatter.string(from: event.endDate),
             EVENT_COST: event.cost,
+            EVENT_WEBSITE: event.website,
             EVENT_IMAGE: event.image,
             EVENT_IS_PENDING: event.isPending.description,
             EVENT_KEYWARDS: "",
