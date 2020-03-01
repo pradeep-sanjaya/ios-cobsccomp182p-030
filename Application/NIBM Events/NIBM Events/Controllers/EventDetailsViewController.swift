@@ -38,7 +38,7 @@ class EventDetailsViewController: UIViewController,
     
 
     /* Variables */
-    var eventObj:Event?
+    var eventObj:Event!
     
     // For the Map
     var annotation:MKAnnotation!
@@ -93,34 +93,34 @@ class EventDetailsViewController: UIViewController,
         }
         
         // event description
-        descrTxt.text = "\(eventObj!.description)"
+        descrTxt.text = "\(eventObj.description)"
         descrTxt.sizeToFit()
         
         
         // GET EVENT'S START DATE (for the labels on the left side of the event's image)
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "dd"
-        let dayStr = dayFormatter.string(from: eventObj!.startDate as! Date)
+        let dayStr = dayFormatter.string(from: eventObj.startDate as! Date)
         dayNrLabel.text = dayStr
         
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMM"
-        let monthStr = monthFormatter.string(from: eventObj!.startDate as! Date)
+        let monthStr = monthFormatter.string(from: eventObj.startDate as! Date)
         monthLabel.text = monthStr
         
         let yearFormatter = DateFormatter()
         yearFormatter.dateFormat = "yyyy"
-        let yearStr = yearFormatter.string(from: eventObj!.startDate as! Date)
+        let yearStr = yearFormatter.string(from: eventObj.startDate as! Date)
         yearLabel.text = yearStr
         
         
         // GET EVENT START AND END DATES & TIME
         let startDateFormatter = DateFormatter()
         startDateFormatter.dateFormat = "MMM dd @hh:mm a"
-        let startDateStr = startDateFormatter.string(from: (eventObj!.startDate as! Date)).uppercased()
+        let startDateStr = startDateFormatter.string(from: (eventObj.startDate as! Date)).uppercased()
         let endDateFormatter = DateFormatter()
         endDateFormatter.dateFormat = "MMM dd @hh:mm a"
-        let endDateStr = endDateFormatter.string(from: (eventObj!.endDate as! Date)).uppercased()
+        let endDateStr = endDateFormatter.string(from: (eventObj.endDate as! Date)).uppercased()
         
         startDateLabel.text = "Start Date: \(startDateStr)"
         if endDateStr != "" {
@@ -132,7 +132,7 @@ class EventDetailsViewController: UIViewController,
         
         // dissable add to calendar if event is expired
         let currentDate = Date()
-        if currentDate > eventObj!.endDate as! Date {
+        if currentDate > eventObj.endDate as! Date {
             addToCalOutlet.isEnabled = false
             addToCalOutlet.backgroundColor = mediumGray
             addToCalOutlet.setTitle("This event has passed", for: .normal)
@@ -144,15 +144,15 @@ class EventDetailsViewController: UIViewController,
         
         
         // event cost
-        costLabel.text = "Cost: \(eventObj!.cost)".uppercased()
+        costLabel.text = "Cost: \(eventObj.cost)".uppercased()
         
         // event website
-        if eventObj!.website != nil {
-            websiteLabel.text = "Website: \(eventObj!.website)"
+        if eventObj.website != nil {
+            websiteLabel.text = "Website: \(eventObj.website)"
         } else {  websiteLabel.text = ""  }
         
         // event location
-        locationLabel.text = "\(eventObj!.location)".uppercased()
+        locationLabel.text = "\(eventObj.location)".uppercased()
         addPinOnMap(locationLabel.text!.lowercased())
         
         
@@ -187,7 +187,7 @@ class EventDetailsViewController: UIViewController,
             
             // Add PointAnnonation text and a Pin to the Map
             self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = "\(self.eventObj!.title)".uppercased()
+            self.pointAnnotation.title = "\(self.eventObj.title)".uppercased()
             self.pointAnnotation.coordinate = CLLocationCoordinate2D( latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:localSearchResponse!.boundingRegion.center.longitude)
             
             self.pinView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
@@ -284,13 +284,13 @@ class EventDetailsViewController: UIViewController,
             
             if calendar.title == "Calendar" {
                 // Get Start and End dates
-                let startDate = eventObj!.startDate as! Date
-                let endDate = eventObj!.endDate as! Date
+                let startDate = eventObj.startDate as! Date
+                let endDate = eventObj.endDate as! Date
                 
                 
                 // Create Event
                 let event = EKEvent(eventStore: store)
-                event.title = "\(eventObj!.title)"
+                event.title = "\(eventObj.title)"
                 event.startDate = startDate
                 event.endDate = endDate
                 event.calendar = calendar
@@ -320,7 +320,7 @@ class EventDetailsViewController: UIViewController,
     // MARK: - Share an event
     @IBAction func shareButt(_ sender: AnyObject) {
         
-        let message  = "Check out this Event: \(eventObj!.title) on #\(Bundle.appName())"
+        let message  = "Check out this Event: \(eventObj.title) on #\(Bundle.appName())"
         let shareItems = [message, eventImage.image!] as [Any]
         
         let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
@@ -342,14 +342,14 @@ class EventDetailsViewController: UIViewController,
 
     // MARK: - Open event link
     @IBAction func openLinkButt(_ sender: AnyObject) {
-        let webURL = URL(string: "\(eventObj!.website)")
+        let webURL = URL(string: "\(eventObj.website)")
         UIApplication.shared.openURL(webURL!)
     }
     
     
     // MARK: - Register in event
     @IBAction func registerButt(_ sender: AnyObject) {
-        let webURL = URL(string: "\(eventObj!.website)")
+        let webURL = URL(string: "\(eventObj.website)")
         UIApplication.shared.openURL(webURL!)
     }
     
@@ -359,7 +359,7 @@ class EventDetailsViewController: UIViewController,
     @objc func reportButton(_ sender: UIButton) {
         
         // This string containes standard HTML tags, you can edit them as you wish
-        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>Hello,<br>Please check the following Event since it seems it contains inappropriate/offensive contents:<br><br>Event Title: <strong>\(eventObj!.title)</strong><br>Event ID: <strong>\(eventObj!.objectId)</strong><br><br>Thanks,<br>Regards.</font>"
+        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>Hello,<br>Please check the following Event since it seems it contains inappropriate/offensive contents:<br><br>Event Title: <strong>\(eventObj.title)</strong><br>Event ID: <strong>\(eventObj.objectId)</strong><br><br>Thanks,<br>Regards.</font>"
         
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
