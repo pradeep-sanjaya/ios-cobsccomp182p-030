@@ -72,17 +72,6 @@ class EventDetailsViewController: UIViewController,
         reportButt.addTarget(self, action: #selector(reportButton(_:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reportButt)
         
-        
-        // Round views corners
-        addToCalOutlet.layer.cornerRadius = 5
-        
-        shareOutlet.layer.cornerRadius = 5
-        
-        registerOutlet.layer.cornerRadius = 5
-        registerOutlet.layer.borderColor = mainColor.cgColor
-        registerOutlet.layer.borderWidth = 1.5
-        
-        
         // get event title
         self.title = "\(eventObj!.title)"
         
@@ -359,7 +348,7 @@ class EventDetailsViewController: UIViewController,
     @objc func reportButton(_ sender: UIButton) {
         
         // This string containes standard HTML tags, you can edit them as you wish
-        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>Hello,<br>Please check the following Event since it seems it contains inappropriate/offensive contents:<br><br>Event Title: <strong>\(eventObj.title)</strong><br>Event ID: <strong>\(eventObj.objectId)</strong><br><br>Thanks,<br>Regards.</font>"
+        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>Hello,<br>Please check the following Event since it seems it contains inappropriate/offensive contents:<br><br>Event Title: <strong>\(eventObj.title)</strong><br>Event ID: <strong>\(eventObj.id)</strong><br><br>Thanks,<br>Regards.</font>"
         
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self

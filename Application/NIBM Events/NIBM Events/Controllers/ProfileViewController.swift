@@ -1,6 +1,6 @@
 import UIKit
 import MessageUI
-
+import Firebase
 
 class ProfileViewController: BaseViewController,
     MFMailComposeViewControllerDelegate,
@@ -16,9 +16,11 @@ class ProfileViewController: BaseViewController,
     @IBOutlet weak var facebookProfileTxt: UITextField!
     @IBOutlet var updateOutlet: UIButton!
     
-
+    /* Variables */
     var imagePicker: ImagePicker!
-
+    let rootRef = Database.database().reference()
+    var localUser:User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,12 @@ class ProfileViewController: BaseViewController,
         containerScrollView.contentSize = CGSize(width: containerScrollView.frame.size.width, height: updateOutlet.frame.origin.y + 250)
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+
+        self.localUser = userService.getLocalUser()
+        
+        fullNameTxt.text = self.localUser.name
+        emailTxt.text = self.localUser.email
+        facebookProfileTxt.text = self.localUser.profileUrl
     }
     
     
@@ -65,6 +73,47 @@ class ProfileViewController: BaseViewController,
     // MARK: - Update profile
     @IBAction func updateProfileAction(_ sender: UIButton) {
         dismissKeyboard()
+        
+        print("----- updateProfileAction -----")
+        let localUser = userService.getLocalUser()
+        print("user: \(localUser)")
+        
+        let user = User(type: localUser.type, token: localUser.token, name: fullNameTxt.text!, email: emailTxt.text!, profileUrl: facebookProfileTxt.text!)
+        
+        userService.setLocalUser(user: user)
+        
+        let userRef = rootRef.child(COLLECTION_USERS)
+                
+        let firebaseUser: [String: String] = [
+            USER_AUTH_TYPE: user.type.toString(),
+            USER_TOKEN: user.token,
+            USER_NAME: user.name,
+            USER_EMAIL: user.email,
+            USER_PROFILE: user.profileUrl
+        ]
+
+        userRef.child(user.token).setValue(firebaseUser) {
+          (error:Error?, ref:DatabaseReference) in
+          if let error = error {
+            print("Data could not be saved: \(error).")
+          } else {
+            print(ref)
+            print("Data saved successfully!")
+          }
+        }
+        
+        /*
+        userRef.childByAutoId().setValue(firebaseUser) {
+          (error:Error?, ref:DatabaseReference) in
+          if let error = error {
+            print("Data could not be saved: \(error).")
+          } else {
+            print(ref)
+            print("Data saved successfully!")
+          }
+        }
+        */
+        
         
 //        // This string containes standard HTML tags, you can edit them as you wish
 //        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>\(messageTxt!.text!)<br><br>You can reply to: \(emailTxt!.text!)</font>"

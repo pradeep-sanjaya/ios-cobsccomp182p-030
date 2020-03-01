@@ -164,6 +164,7 @@ class SubmitEventViewController: BaseViewController,
     
     // MARK: - Choose image
     @IBAction func chooseImageButt(_ sender: AnyObject) {
+        
         let alert = UIAlertController(title: APP_NAME,
                                       message: "Select source",
                                       preferredStyle: .alert)
@@ -204,34 +205,19 @@ class SubmitEventViewController: BaseViewController,
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
         
+                
     }
     
-    // ImagePicker delegate
     
+    // MARK: - ImagePicker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            
-            print(pickedImage)
             eventImage.image = pickedImage //scaleImageToMaxSize(image: pickedImage, maxDimension: 600)
         }
      
         dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-         let selectedImage : UIImage = image
-         eventImage.image = scaleImageToMaxSize(image: selectedImage, maxDimension: 600)
-         dismiss(animated: true, completion: nil)
-    }
-    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        if let image = info[UIImagePickerControllerOriginalImage] as! UIImage {
-//            eventImage.image = scaleImageToMaxSize(image: image, maxDimension: 600)
-//
-//        }
-//
-//        dismiss(animated: true, completion: nil)
-//    }
     
     // MARK: - Set start date button
     @IBAction func startDateButt(_ sender: AnyObject) {
@@ -240,12 +226,14 @@ class SubmitEventViewController: BaseViewController,
         layoutButtons()
     }
     
+    
     // MARK: - Set end date button
     @IBAction func endDateButt(_ sender: AnyObject) {
         startDateSelected = false
         showDatePicker()
         layoutButtons()
     }
+    
     
     // MARK: - Change button borders
     func layoutButtons() {
@@ -260,6 +248,7 @@ class SubmitEventViewController: BaseViewController,
         }
     }
     
+    
     // MARK: - Submit event button
     @IBAction func submitEventButt(_ sender: AnyObject) {
         if nameTxt.text == "" || descriptionTxt.text == "" ||
@@ -271,6 +260,7 @@ class SubmitEventViewController: BaseViewController,
             showHUD()
             dismissKeyboard()
             
+            /*
             // Save event on Parse
             let eventsClass = PFObject(className: EVENTS_CLASS_NAME)
             eventsClass[EVENTS_TITLE] = nameTxt.text
@@ -311,6 +301,8 @@ class SubmitEventViewController: BaseViewController,
                     self.simpleAlert("\(error!.localizedDescription)")
                     self.hideHUD()
                 }}
+            */
+            
         }
         
     }
@@ -369,11 +361,4 @@ class SubmitEventViewController: BaseViewController,
         // Dispose of any resources that can be recreated.
     }
     
-}
-
-extension SubmitEventViewController: ImagePickerDelegate {
-
-    func didSelect(image: UIImage?) {
-        //self.imageView.image = image
-    }
 }

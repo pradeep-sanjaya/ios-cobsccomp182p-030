@@ -1,6 +1,6 @@
 import Foundation
 struct Event {
-    var objectId: String
+    var id: String
     var title:String;
     var location:String;
     var description:String;
@@ -11,4 +11,5 @@ struct Event {
     var image:String;
     var isPending:Bool;
     var keywords:String;
+    var user:String
 }

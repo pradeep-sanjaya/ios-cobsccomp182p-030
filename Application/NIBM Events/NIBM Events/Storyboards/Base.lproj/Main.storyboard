@@ -65,8 +65,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="270"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8q-3S-PVP" userLabel="profileImage" customClass="RoundedImageView" customModule="NIBM_Events" customModuleProvider="target">
+                                                            <rect key="frame" x="212" y="2" width="75" height="75"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" name="Background4"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                                        </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCt-ts-S9O" userLabel="eventImage">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="293" height="140"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
@@ -120,17 +126,17 @@
                                                             <rect key="frame" x="203" y="139" width="90" height="130"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="THj-id-HeY" userLabel="ticketImg">
+                                                                    <rect key="frame" x="29" y="13" width="30" height="30"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-rQ-6Lr" userLabel="costLabel">
-                                                                    <rect key="frame" x="13" y="73" width="61" height="27"/>
+                                                                    <rect key="frame" x="13" y="68" width="61" height="27"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="THj-id-HeY" userLabel="ticketImg">
-                                                                    <rect key="frame" x="22" y="31" width="44" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" name="LightBloe"/>
                                                         </view>
@@ -145,6 +151,7 @@
                                             <outlet property="eventImage" destination="fCt-ts-S9O" id="tNh-Cq-MXy"/>
                                             <outlet property="locationLabel" destination="LW9-PZ-mar" id="p5Z-xz-pZA"/>
                                             <outlet property="monthLabel" destination="FJf-Zs-kkQ" id="a00-T7-M8t"/>
+                                            <outlet property="profileImage" destination="Z8q-3S-PVP" id="UQr-5f-EfT"/>
                                             <outlet property="timeLabel" destination="qsp-Ht-DW5" id="GgB-vU-v7C"/>
                                             <outlet property="titleLbl" destination="U6F-LF-1Dw" id="eG0-Vv-PzR"/>
                                             <outlet property="yearLabel" destination="FQA-GP-aQc" id="Xzy-tH-UBo"/>
@@ -157,7 +164,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPj-hC-ZGl" userLabel="searchView">
-                                <rect key="frame" x="0.0" y="64" width="321" height="100"/>
+                                <rect key="frame" x="0.0" y="329" width="321" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zIA-1H-Nb5" userLabel="searchTxt">
@@ -199,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW6-Y5-fwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="-1390"/>
+            <point key="canvasLocation" x="742.5" y="-1390"/>
         </scene>
         <!--Submit an Event-->
         <scene sceneID="Leq-Ns-00Z">
@@ -482,10 +489,10 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="92" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="TAP TO CHOOSE IMAGE">
-                                            <color key="titleColor" name="White"/>
+                                            <color key="titleColor" name="DarkBlue"/>
                                         </state>
                                         <connections>
-                                            <action selector="chooseImageAction:" destination="zXH-IW-OnR" eventType="touchUpInside" id="uVT-k4-JHC"/>
+                                            <action selector="chooseImageAction:" destination="zXH-IW-OnR" eventType="touchUpInside" id="Tap-dV-HG6"/>
                                             <action selector="chooseImageButt:" destination="QgP-Ba-Mn3" eventType="touchUpInside" id="HL6-x1-TSy"/>
                                         </connections>
                                     </button>
@@ -901,7 +908,7 @@
                     <tabBarItem key="tabBarItem" title="Submit an Event" image="tab_submit" id="oVn-1M-XWw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Geg-Sz-rEj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -925,7 +932,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="tab_profile" id="0LU-G1-5cp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3N-T3-K8v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -946,10 +953,10 @@
     <resources>
         <image name="locIcon" width="30" height="30"/>
         <image name="refreshButt" width="44" height="44"/>
-        <image name="tab_home" width="44" height="44"/>
+        <image name="tab_home" width="32" height="32"/>
         <image name="tab_profile" width="32" height="32"/>
-        <image name="tab_submit" width="44" height="44"/>
-        <image name="ticket" width="44" height="44"/>
+        <image name="tab_submit" width="32" height="32"/>
+        <image name="ticket" width="32" height="32.5"/>
         <namedColor name="Background1">
             <color red="0.25799998641014099" green="0.34799998998641968" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -970,9 +977,6 @@
         </namedColor>
         <namedColor name="LightBloe">
             <color red="0.032999999821186066" green="0.30899998545646667" blue="0.6600000262260437" alpha="0.73400002717971802" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

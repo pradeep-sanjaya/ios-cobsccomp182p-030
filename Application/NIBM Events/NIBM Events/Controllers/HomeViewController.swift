@@ -7,6 +7,7 @@ class EventCell: UICollectionViewCell {
     
     /* Views */
     @IBOutlet var eventImage: UIImageView!
+    @IBOutlet var profileImage: UIImageView!
     @IBOutlet var dayNrLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
@@ -75,7 +76,7 @@ class HomeViewController: UIViewController,
         
         self.eventsArray = [
             Event(
-                objectId: "1",
+                id: "1",
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 location: "Vidya Mawatha, Colombo 07",
                 description: "Praesent convallis aliquam tincidunt. Maecenas porta ullamcorper arcu, nec tempus magna pulvinar ac.", website: "",
@@ -84,10 +85,11 @@ class HomeViewController: UIViewController,
                 cost: "Free",
                 image: "https://previews.123rf.com/images/jiadt/jiadt1911/jiadt191100007/133455623-reflection-of-riverside-city-and-cruise-ship.jpg",
                 isPending: false,
-                keywords: "nibm"
+                keywords: "nibm",
+                user: "rQKfZY5UfcPjIBHqrZvRLYOqdii2"
             ),
             Event(
-                objectId: "2",
+                id: "2",
                 title: "Proin bibendum erat nec nisl vestibulum laoreet.",
                 location: "NIBM",
                 description: "Nulla pharetra consectetur felis. Pellentesque semper id neque quis ultricies.", website: "",
@@ -96,7 +98,8 @@ class HomeViewController: UIViewController,
                 cost: "Free",
                 image: "https://previews.123rf.com/images/jiadt/jiadt1911/jiadt191100007/133455623-reflection-of-riverside-city-and-cruise-ship.jpg",
                 isPending: false,
-                keywords: "nibm"
+                keywords: "nibm",
+                user: "rQKfZY5UfcPjIBHqrZvRLYOqdii2"
             )
         ]
         
@@ -140,7 +143,10 @@ class HomeViewController: UIViewController,
         
         let url = URL(string: event.image)
         cell.eventImage.kf.setImage(with: url)
-        
+                
+        cell.profileImage.kf.setImage(with: url)
+        cell.bringSubviewToFront(cell.profileImage)
+
         // get event start date (for the labels on the left side of the event's image)
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "dd"
