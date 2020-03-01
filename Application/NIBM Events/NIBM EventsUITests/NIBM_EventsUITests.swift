@@ -11,8 +11,7 @@ import XCTest
 class NIBM_EventsUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -24,7 +23,7 @@ class NIBM_EventsUITests: XCTestCase {
     }
 
     func testLogin() {
-        // UI tests must launch the application that they test.
+        // application shoule log out first
         
         let app = XCUIApplication()
         app.launch()

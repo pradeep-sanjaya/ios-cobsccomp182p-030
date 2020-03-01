@@ -19,11 +19,21 @@ class NIBM_EventsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testValidator() {
+        XCTAssertEqual(Validator.isValidEmail("sanjayangp@gmail.com"), true)
+        XCTAssertEqual(Validator.isValidEmail("sanjayangp"), false)
     }
 
+    func testDateutils() {
+        let d1 = Date()
+        print("date 1: \(d1)")
+        let d2 = Calendar.current.date(byAdding: .day, value: 1, to: d1)!
+        print("date2: \(d2)")
+        print("d2 description: \(d2.description)")
+        
+        XCTAssertEqual(DateUtils.addDates(to: Date(), days: 1)?.description, d2.description)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
