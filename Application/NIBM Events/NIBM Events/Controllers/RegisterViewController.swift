@@ -124,7 +124,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
         navigationItem.title = "Title"
 
         // Create left and right button for navigation item
-         let leftButton =  UIBarButtonItem(title: "Login", style:   .plain, target: self, action: #selector(navigationBackButt(_:)))
+         let leftButton =  UIBarButtonItem(title: "Login", style:   .plain, target: self, action: #selector(navigationBackButton(_:)))
 
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
@@ -137,7 +137,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
     }
      */
     
-    @objc func navigationBackButt(_ sender: UIBarButtonItem) {
+    @objc func navigationBackButton(_ sender: UIBarButtonItem) {
     }
 
 }

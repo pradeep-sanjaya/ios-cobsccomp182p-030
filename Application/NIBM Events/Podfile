@@ -25,6 +25,7 @@ target 'NIBM Events' do
   pod 'ReachabilitySwift'
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 5.9'
+  pod 'Parse'
   
   target 'NIBM EventsTests' do
     inherit! :search_paths

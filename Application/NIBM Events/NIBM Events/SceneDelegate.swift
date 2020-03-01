@@ -11,14 +11,37 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var userService = UserService()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        // login
+        /*
         let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let mainNavigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController
-
         self.window = self.window ?? UIWindow()
         self.window!.rootViewController = mainNavigationController
+        */
+        
+        // main
+        var isUserLogedIn = false
+        if let user:User = userService.getLocalUser() {
+            if (user.token != "") {
+                isUserLogedIn = true
+            }
+        }
+
+        if (isUserLogedIn) {
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as? MainTabBarController
+            UIApplication.shared.windows.first?.rootViewController = mainTabBarController
+        } else {
+            let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let mainNavigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController
+            UIApplication.shared.windows.first?.rootViewController = mainNavigationController
+        }
+        
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

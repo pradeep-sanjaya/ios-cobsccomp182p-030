@@ -1,7 +1,7 @@
 import UIKit
 import Reachability
 
-class MainNavigationController: UINavigationController, UITextFieldDelegate {
+class MainNavigationController: UINavigationController {
 
     let reachability = try! Reachability()
 

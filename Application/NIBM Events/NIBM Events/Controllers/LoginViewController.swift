@@ -101,7 +101,7 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
             } else {
                 strongSelf.userService.setLocalUserWithFirebaseId(name: "", email: strongSelf.emailTxt.text!, profileUrl: "")
                 
-                self?.setRootViewController(name: "HomeViewController")
+                self?.setRootViewController(name: "MainTabBar")
             }
 
         }
@@ -257,7 +257,7 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                     let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl)
                     self.userService.setLocalUser(user: fbUser)
 
-                    self.setRootViewController(name: "HomeViewController")
+                    self.setRootViewController(name: "MainTabBar")
                     
                 } else {
                     self.presentHideAlert(withTitle: Bundle.appName(), message: "An error occurred")

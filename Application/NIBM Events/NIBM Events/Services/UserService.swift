@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import FacebookLogin
 
 class UserService {
     
@@ -67,7 +68,7 @@ class UserService {
         return userId
     }
     
-    func signOut() -> Bool {
+    func signOutFirebase() -> Bool {
         do {
             try Auth.auth().signOut()
             return true
@@ -127,22 +128,35 @@ class UserService {
         }
     }
     
+    // facebook
+    func signOutFacebook() -> Bool {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        return true
+    }
+    
+    
+    // user default
     public func getLocalUser() -> User {
         
         let userDictonary = defaults.object(forKey: "user") as? [String:String] ?? [String:String]()
 
-        let authType = AuthType.getAuthTypeByString(value: userDictonary["type"])
+        if let type = userDictonary["type"] {
+            let authType = AuthType.getAuthTypeByString(value: type)
 
-        return User(
-            type: authType,
-            token: userDictonary["token"]!,
-            name: userDictonary["name"]!,
-            email: userDictonary["email"]!,
-            profileUrl: userDictonary["profileUrl"]!
-        )
+            return User(
+                type: authType,
+                token: userDictonary["token"]!,
+                name: userDictonary["name"]!,
+                email: userDictonary["email"]!,
+                profileUrl: userDictonary["profileUrl"]!
+            )
+        }
+        
+        return User(type: AuthType.other, token: "", name: "", email: "", profileUrl: "")
+
     }
 
-    // user defaults
     public func setLocalUser(user: User) {
         let userDictonary = ["type": user.type.toString(), "token": user.token, "name": user.name, "email": user.email,  "profileUrl": user.profileUrl]
         defaults.set(userDictonary, forKey: "user")
@@ -152,6 +166,12 @@ class UserService {
         let userId = self.getFirebaseUserId()
         let user = User(type: AuthType.firebase, token: userId!, name: name, email: email, profileUrl: profileUrl)
         self.setLocalUser(user: user)
+    }
+    
+    public func signOut() {
+        let _ = signOutFirebase()
+        let _ = signOutFacebook()
+        defaults.removeObject(forKey:"user")
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2704EF73240B66EC007F7573 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF72240B66EC007F7573 /* MainTabBarController.swift */; };
 		27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; };
 		27560899240738D200A1CF82 /* CornerUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756089B24074EBD00A1CF82 /* RegisterViewController.swift */; };
@@ -26,6 +27,29 @@
 		27637E3C240A74F1009E3C32 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27637E3B240A74F1009E3C32 /* Colors.xcassets */; };
 		27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */; };
 		27637E40240A833F009E3C32 /* Bundle+AppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E3F240A833F009E3C32 /* Bundle+AppName.swift */; };
+		27637E43240AAC89009E3C32 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E42240AAC89009E3C32 /* Configs.swift */; };
+		27637E45240AAD1C009E3C32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E44240AAD1C009E3C32 /* ProfileViewController.swift */; };
+		27637E47240AAD82009E3C32 /* SubmitEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E46240AAD82009E3C32 /* SubmitEventViewController.swift */; };
+		27637E49240AAE21009E3C32 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E48240AAE21009E3C32 /* EventDetailsViewController.swift */; };
+		27637E4C240AC215009E3C32 /* MainNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E4B240AC215009E3C32 /* MainNavigationBar.swift */; };
+		27637E4E240B2585009E3C32 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E4D240B2585009E3C32 /* AudioToolbox.framework */; };
+		27637E50240B259F009E3C32 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E4F240B259F009E3C32 /* AVFoundation.framework */; };
+		27637E52240B25B3009E3C32 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E51240B25B3009E3C32 /* CFNetwork.framework */; };
+		27637E54240B25BD009E3C32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E53240B25BD009E3C32 /* CoreGraphics.framework */; };
+		27637E56240B25CF009E3C32 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E55240B25CF009E3C32 /* CoreLocation.framework */; };
+		27637E58240B25D7009E3C32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E57240B25D7009E3C32 /* CoreMedia.framework */; };
+		27637E5A240B25F4009E3C32 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E59240B25F4009E3C32 /* CoreTelephony.framework */; };
+		27637E5C240B260D009E3C32 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E5B240B260D009E3C32 /* EventKit.framework */; };
+		27637E5E240B2616009E3C32 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E5D240B2616009E3C32 /* EventKitUI.framework */; };
+		27637E63240B266F009E3C32 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E62240B266F009E3C32 /* MessageUI.framework */; };
+		27637E65240B2687009E3C32 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E64240B2687009E3C32 /* MobileCoreServices.framework */; };
+		27637E67240B269A009E3C32 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E66240B269A009E3C32 /* QuartzCore.framework */; };
+		27637E69240B26AA009E3C32 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E68240B26AA009E3C32 /* Security.framework */; };
+		27637E6B240B26BA009E3C32 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27637E6A240B26BA009E3C32 /* SystemConfiguration.framework */; };
+		27637E6D240B2E42009E3C32 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E6C240B2E42009E3C32 /* Event.swift */; };
+		27637E6F240B3094009E3C32 /* ViewController+Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E6E240B3094009E3C32 /* ViewController+Hud.swift */; };
+		27637E71240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */; };
+		27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E72240B541C009E3C32 /* ImagePicker.swift */; };
 		27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACC6052408AD5F00AB1690 /* Validator.swift */; };
 		27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D166492408DFF90081FCEA /* UIViewUtil.swift */; };
 		27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1664B2408E2E00081FCEA /* BaseViewController.swift */; };
@@ -72,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1DA38FB515D15FF99D3826C4 /* Pods_NIBM_EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2704EF72240B66EC007F7573 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2756088D2407358700A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560897240738D100A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2756089B24074EBD00A1CF82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +122,32 @@
 		27637E3B240A74F1009E3C32 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		27637E3F240A833F009E3C32 /* Bundle+AppName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+AppName.swift"; sourceTree = "<group>"; };
+		27637E42240AAC89009E3C32 /* Configs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		27637E44240AAD1C009E3C32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		27637E46240AAD82009E3C32 /* SubmitEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitEventViewController.swift; sourceTree = "<group>"; };
+		27637E48240AAE21009E3C32 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		27637E4B240AC215009E3C32 /* MainNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationBar.swift; sourceTree = "<group>"; };
+		27637E4D240B2585009E3C32 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		27637E4F240B259F009E3C32 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27637E51240B25B3009E3C32 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		27637E53240B25BD009E3C32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		27637E55240B25CF009E3C32 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27637E57240B25D7009E3C32 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		27637E59240B25F4009E3C32 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		27637E5B240B260D009E3C32 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		27637E5D240B2616009E3C32 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		27637E5F240B2631009E3C32 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		27637E60240B2640009E3C32 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		27637E61240B264D009E3C32 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		27637E62240B266F009E3C32 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		27637E64240B2687009E3C32 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		27637E66240B269A009E3C32 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		27637E68240B26AA009E3C32 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		27637E6A240B26BA009E3C32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		27637E6C240B2E42009E3C32 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		27637E6E240B3094009E3C32 /* ViewController+Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Hud.swift"; sourceTree = "<group>"; };
+		27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ScaleImageToMaxSize.swift"; sourceTree = "<group>"; };
+		27637E72240B541C009E3C32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		27ACC6052408AD5F00AB1690 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		27D166492408DFF90081FCEA /* UIViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtil.swift; sourceTree = "<group>"; };
 		27D1664B2408E2E00081FCEA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +171,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27637E5E240B2616009E3C32 /* EventKitUI.framework in Frameworks */,
+				27637E69240B26AA009E3C32 /* Security.framework in Frameworks */,
+				27637E58240B25D7009E3C32 /* CoreMedia.framework in Frameworks */,
+				27637E67240B269A009E3C32 /* QuartzCore.framework in Frameworks */,
+				27637E63240B266F009E3C32 /* MessageUI.framework in Frameworks */,
+				27637E54240B25BD009E3C32 /* CoreGraphics.framework in Frameworks */,
+				27637E6B240B26BA009E3C32 /* SystemConfiguration.framework in Frameworks */,
+				27637E50240B259F009E3C32 /* AVFoundation.framework in Frameworks */,
 				527F2F95BF963528F5D6F71B /* Pods_NIBM_Events.framework in Frameworks */,
 				27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */,
+				27637E56240B25CF009E3C32 /* CoreLocation.framework in Frameworks */,
+				27637E65240B2687009E3C32 /* MobileCoreServices.framework in Frameworks */,
+				27637E5C240B260D009E3C32 /* EventKit.framework in Frameworks */,
+				27637E4E240B2585009E3C32 /* AudioToolbox.framework in Frameworks */,
+				27637E5A240B25F4009E3C32 /* CoreTelephony.framework in Frameworks */,
+				27637E52240B25B3009E3C32 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +212,23 @@
 		12AACD8160A3E5E880F033B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27637E6A240B26BA009E3C32 /* SystemConfiguration.framework */,
+				27637E68240B26AA009E3C32 /* Security.framework */,
+				27637E66240B269A009E3C32 /* QuartzCore.framework */,
+				27637E64240B2687009E3C32 /* MobileCoreServices.framework */,
+				27637E62240B266F009E3C32 /* MessageUI.framework */,
+				27637E61240B264D009E3C32 /* libz.tbd */,
+				27637E60240B2640009E3C32 /* libsqlite3.tbd */,
+				27637E5F240B2631009E3C32 /* libsqlite3.0.tbd */,
+				27637E5D240B2616009E3C32 /* EventKitUI.framework */,
+				27637E5B240B260D009E3C32 /* EventKit.framework */,
+				27637E59240B25F4009E3C32 /* CoreTelephony.framework */,
+				27637E57240B25D7009E3C32 /* CoreMedia.framework */,
+				27637E55240B25CF009E3C32 /* CoreLocation.framework */,
+				27637E53240B25BD009E3C32 /* CoreGraphics.framework */,
+				27637E51240B25B3009E3C32 /* CFNetwork.framework */,
+				27637E4F240B259F009E3C32 /* AVFoundation.framework */,
+				27637E4D240B2585009E3C32 /* AudioToolbox.framework */,
 				31A9CD4DD800B81A7AC94C04 /* Pods_NIBM_Events.framework */,
 				27560897240738D100A1CF82 /* CornerUI.framework */,
 				2756088D2407358700A1CF82 /* CornerUI.framework */,
@@ -183,6 +265,8 @@
 			children = (
 				2757C7B7240679820065D26E /* Controllers */,
 				27D1665624091B690081FCEA /* Models */,
+				27637E4A240AC1E2009E3C32 /* Views */,
+				27637E41240AABE8009E3C32 /* Configs */,
 				27D1665C2409303B0081FCEA /* Extensions */,
 				27D16659240925030081FCEA /* Services */,
 				27ACC6042408AD3A00AB1690 /* Utils */,
@@ -233,8 +317,29 @@
 				2756089F24076EBA00A1CF82 /* ForgotPasswordViewController.swift */,
 				27D1664B2408E2E00081FCEA /* BaseViewController.swift */,
 				27D16654240917550081FCEA /* HomeViewController.swift */,
+				27637E44240AAD1C009E3C32 /* ProfileViewController.swift */,
+				27637E46240AAD82009E3C32 /* SubmitEventViewController.swift */,
+				27637E48240AAE21009E3C32 /* EventDetailsViewController.swift */,
+				2704EF72240B66EC007F7573 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27637E41240AABE8009E3C32 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				27637E42240AAC89009E3C32 /* Configs.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		27637E4A240AC1E2009E3C32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27637E4B240AC215009E3C32 /* MainNavigationBar.swift */,
+				27637E72240B541C009E3C32 /* ImagePicker.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		27ACC6042408AD3A00AB1690 /* Utils */ = {
@@ -261,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				27D1665724091B830081FCEA /* User.swift */,
+				27637E6C240B2E42009E3C32 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +385,8 @@
 				27D1665D240930570081FCEA /* UserDefaults+Dictionary.swift */,
 				27637E3D240A7CC5009E3C32 /* UIViewController+Alert.swift */,
 				27637E3F240A833F009E3C32 /* Bundle+AppName.swift */,
+				27637E6E240B3094009E3C32 /* ViewController+Hud.swift */,
+				27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -581,17 +689,27 @@
 				27637E40240A833F009E3C32 /* Bundle+AppName.swift in Sources */,
 				27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */,
 				2757C78824066C350065D26E /* ViewController.swift in Sources */,
+				27637E71240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift in Sources */,
+				27637E6F240B3094009E3C32 /* ViewController+Hud.swift in Sources */,
 				2757C78424066C350065D26E /* AppDelegate.swift in Sources */,
 				2757C78E24066C350065D26E /* NIBM_Events.xcdatamodeld in Sources */,
+				27637E6D240B2E42009E3C32 /* Event.swift in Sources */,
 				27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */,
+				27637E45240AAD1C009E3C32 /* ProfileViewController.swift in Sources */,
+				27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */,
 				2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */,
 				27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */,
 				2756089E24076A2700A1CF82 /* MainNavigationController.swift in Sources */,
 				2757C7BB24067E710065D26E /* LoginViewController.swift in Sources */,
 				27D1665E240930570081FCEA /* UserDefaults+Dictionary.swift in Sources */,
+				27637E49240AAE21009E3C32 /* EventDetailsViewController.swift in Sources */,
+				2704EF73240B66EC007F7573 /* MainTabBarController.swift in Sources */,
 				27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */,
 				2757C78624066C350065D26E /* SceneDelegate.swift in Sources */,
+				27637E4C240AC215009E3C32 /* MainNavigationBar.swift in Sources */,
 				27D16655240917550081FCEA /* HomeViewController.swift in Sources */,
+				27637E43240AAC89009E3C32 /* Configs.swift in Sources */,
+				27637E47240AAD82009E3C32 /* SubmitEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +886,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9293X7J567;
 				INFOPLIST_FILE = "NIBM Events/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -787,6 +906,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9293X7J567;
 				INFOPLIST_FILE = "NIBM Events/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
