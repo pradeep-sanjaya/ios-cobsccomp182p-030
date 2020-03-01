@@ -76,41 +76,41 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
     func validate() {
         guard let name = nameTxt.text, name != "" else {
             print("name is empty")
-            UIViewUtil.setUnsetError(of: nameTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: false)
             nameTxt.becomeFirstResponder()
             return
         }
         
-        UIViewUtil.setUnsetError(of: nameTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: true)
         
         guard let email = emailTxt.text, email != "", Validator.isValidEmail(email) else {
             print("email is empty")
-            UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
             emailTxt.becomeFirstResponder()
             return
         }
         
-        UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
         
         guard let password = passwordTxt.text, password != "" else {
             print("password is empty")
-            UIViewUtil.setUnsetError(of: passwordTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: false)
             passwordTxt.becomeFirstResponder()
             return
         }
         
-        UIViewUtil.setUnsetError(of: passwordTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: true)
         
         guard let passwordRetype = passwordRetypeTxt.text,
             passwordRetype != "",
             password == passwordRetype else {
             print("retype password is empty")
-            UIViewUtil.setUnsetError(of: passwordRetypeTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: false)
             passwordRetypeTxt.becomeFirstResponder()
             return
         }
         
-        UIViewUtil.setUnsetError(of: passwordRetypeTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: true)
     }
     
     /*

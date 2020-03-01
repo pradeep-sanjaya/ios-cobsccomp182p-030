@@ -338,8 +338,9 @@ class EventDetailsViewController: UIViewController,
     
     // MARK: - Register in event
     @IBAction func registerButt(_ sender: AnyObject) {
-        let webURL = URL(string: "\(eventObj.website)")
-        UIApplication.shared.openURL(webURL!)
+        if let webURL = URL(string: "\(eventObj.website)") {
+            UIApplication.shared.openURL(webURL)
+        }
     }
     
     

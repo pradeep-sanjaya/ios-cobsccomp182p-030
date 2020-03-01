@@ -113,19 +113,19 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
         guard let email = emailTxt.text, email != "" ,
             Validator.isValidEmail(email) else {
             print("email is empty")
-                UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: false)
+                UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
             return
         }
         
-        UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
         
         guard let password = passwordTxt.text, password != "" else {
             print("password is empty")
-            UIViewUtil.setUnsetError(of: passwordTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: false)
             return
         }
         
-        UIViewUtil.setUnsetError(of: passwordTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: true)
         
         print("email: \(email)")
     

@@ -11,6 +11,7 @@
 		2704EF75240C0367007F7573 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF74240C0367007F7573 /* RoundedImageView.swift */; };
 		2704EF77240C1EB3007F7573 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF76240C1EB3007F7573 /* EventService.swift */; };
 		2704EF79240C2501007F7573 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF78240C2501007F7573 /* StorageService.swift */; };
+		2704EF7B240C3CF7007F7573 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF7A240C3CF7007F7573 /* DateUtils.swift */; };
 		27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; };
 		27560899240738D200A1CF82 /* CornerUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756089B24074EBD00A1CF82 /* RegisterViewController.swift */; };
@@ -54,7 +55,7 @@
 		27637E71240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */; };
 		27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27637E72240B541C009E3C32 /* ImagePicker.swift */; };
 		27ACC6062408AD5F00AB1690 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACC6052408AD5F00AB1690 /* Validator.swift */; };
-		27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D166492408DFF90081FCEA /* UIViewUtil.swift */; };
+		27D1664A2408DFF90081FCEA /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D166492408DFF90081FCEA /* UIViewUtils.swift */; };
 		27D1664C2408E2E00081FCEA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1664B2408E2E00081FCEA /* BaseViewController.swift */; };
 		27D16653240915770081FCEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27D16652240915770081FCEA /* GoogleService-Info.plist */; };
 		27D16655240917550081FCEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D16654240917550081FCEA /* HomeViewController.swift */; };
@@ -103,6 +104,7 @@
 		2704EF74240C0367007F7573 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		2704EF76240C1EB3007F7573 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		2704EF78240C2501007F7573 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		2704EF7A240C3CF7007F7573 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		2756088D2407358700A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560897240738D100A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2756089B24074EBD00A1CF82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 		27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ScaleImageToMaxSize.swift"; sourceTree = "<group>"; };
 		27637E72240B541C009E3C32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		27ACC6052408AD5F00AB1690 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		27D166492408DFF90081FCEA /* UIViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtil.swift; sourceTree = "<group>"; };
+		27D166492408DFF90081FCEA /* UIViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
 		27D1664B2408E2E00081FCEA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		27D16652240915770081FCEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27D16654240917550081FCEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -353,7 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				27ACC6052408AD5F00AB1690 /* Validator.swift */,
-				27D166492408DFF90081FCEA /* UIViewUtil.swift */,
+				27D166492408DFF90081FCEA /* UIViewUtils.swift */,
+				2704EF7A240C3CF7007F7573 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				27637E71240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift in Sources */,
 				2704EF77240C1EB3007F7573 /* EventService.swift in Sources */,
 				27637E6F240B3094009E3C32 /* ViewController+Hud.swift in Sources */,
+				2704EF7B240C3CF7007F7573 /* DateUtils.swift in Sources */,
 				2757C78424066C350065D26E /* AppDelegate.swift in Sources */,
 				2757C78E24066C350065D26E /* NIBM_Events.xcdatamodeld in Sources */,
 				27637E6D240B2E42009E3C32 /* Event.swift in Sources */,
@@ -708,7 +712,7 @@
 				27637E45240AAD1C009E3C32 /* ProfileViewController.swift in Sources */,
 				27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */,
 				2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */,
-				27D1664A2408DFF90081FCEA /* UIViewUtil.swift in Sources */,
+				27D1664A2408DFF90081FCEA /* UIViewUtils.swift in Sources */,
 				2756089E24076A2700A1CF82 /* MainNavigationController.swift in Sources */,
 				2757C7BB24067E710065D26E /* LoginViewController.swift in Sources */,
 				27D1665E240930570081FCEA /* UserDefaults+Dictionary.swift in Sources */,

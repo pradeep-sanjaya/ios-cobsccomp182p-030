@@ -35,11 +35,11 @@ class ForgotPasswordViewController: BaseViewController {
         guard let email = emailTxt.text, email != "" ,
             Validator.isValidEmail(email) else {
             print("email is empty")
-            UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: false)
+            UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
             return
         }
         
-        UIViewUtil.setUnsetError(of: emailTxt, forValidStatus: true)
+        UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
 
         print("email: \(email)")
     }

@@ -80,5 +80,7 @@
 	<string>516966115689261</string>
 	<key>FacebookDisplayName</key>
 	<string>NIBM Events</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>This app needs to access Calendars to share events</string>
 </dict>
 </plist>
