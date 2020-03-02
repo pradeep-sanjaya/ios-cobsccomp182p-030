@@ -276,7 +276,7 @@ class SubmitEventViewController: BaseViewController,
                 keywords: "",
                 user: localUser.token)
             
-            eventService.create(event: event)
+            eventService.create(event: event, image: self.eventImage.image)
             
             hideHUD()
         }

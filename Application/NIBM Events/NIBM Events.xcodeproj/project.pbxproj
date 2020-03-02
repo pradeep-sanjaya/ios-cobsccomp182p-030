@@ -12,6 +12,8 @@
 		2704EF77240C1EB3007F7573 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF76240C1EB3007F7573 /* EventService.swift */; };
 		2704EF79240C2501007F7573 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF78240C2501007F7573 /* StorageService.swift */; };
 		2704EF7B240C3CF7007F7573 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF7A240C3CF7007F7573 /* DateUtils.swift */; };
+		2741477F240C876000068727 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741477E240C876000068727 /* String+Date.swift */; };
+		27414781240C8A4400068727 /* String+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27414780240C8A4400068727 /* String+Bool.swift */; };
 		27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; };
 		27560899240738D200A1CF82 /* CornerUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756089B24074EBD00A1CF82 /* RegisterViewController.swift */; };
@@ -105,6 +107,8 @@
 		2704EF76240C1EB3007F7573 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		2704EF78240C2501007F7573 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		2704EF7A240C3CF7007F7573 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		2741477E240C876000068727 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		27414780240C8A4400068727 /* String+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Bool.swift"; sourceTree = "<group>"; };
 		2756088D2407358700A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560897240738D100A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2756089B24074EBD00A1CF82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				27637E3F240A833F009E3C32 /* Bundle+AppName.swift */,
 				27637E6E240B3094009E3C32 /* ViewController+Hud.swift */,
 				27637E70240B3127009E3C32 /* UIViewController+ScaleImageToMaxSize.swift */,
+				2741477E240C876000068727 /* String+Date.swift */,
+				27414780240C8A4400068727 /* String+Bool.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -707,10 +713,12 @@
 				2704EF7B240C3CF7007F7573 /* DateUtils.swift in Sources */,
 				2757C78424066C350065D26E /* AppDelegate.swift in Sources */,
 				2757C78E24066C350065D26E /* NIBM_Events.xcdatamodeld in Sources */,
+				2741477F240C876000068727 /* String+Date.swift in Sources */,
 				27637E6D240B2E42009E3C32 /* Event.swift in Sources */,
 				27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */,
 				27637E45240AAD1C009E3C32 /* ProfileViewController.swift in Sources */,
 				27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */,
+				27414781240C8A4400068727 /* String+Bool.swift in Sources */,
 				2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */,
 				27D1664A2408DFF90081FCEA /* UIViewUtils.swift in Sources */,
 				2756089E24076A2700A1CF82 /* MainNavigationController.swift in Sources */,
