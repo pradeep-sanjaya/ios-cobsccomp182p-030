@@ -82,5 +82,7 @@
 	<string>NIBM Events</string>
     <key>NSCalendarsUsageDescription</key>
     <string>This app needs to access Calendars to share events</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>This app needs to FaceID to login</string>
 </dict>
 </plist>

@@ -50,35 +50,34 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
-        validate()
         
-        if let email = emailTxt.text, let password = passwordTxt.text {
-            userService.createUser(email: email, password: password) {
+        if validate() {
+            userService.createUser(email: emailTxt.text!, password: passwordTxt.text!) {
                 (error) in
+                
+                if error == nil {
+                    self.userService.login(withEmail: self.emailTxt.text!, password: self.passwordTxt.text!)
+                    
+                    self.userService.setLocalUserWithFirebaseId(name: self.nameTxt.text!, email: self.emailTxt.text!, profileUrl: "")
+                    
+                    let user = self.userService.getLocalUser()
+                    self.userService.saveUser(user: user)
+                    
+                    self.setRootViewController(name: "MainTabBar")
+                } else {
+                    self.presentHideAlert(withTitle: Bundle.appName(), message: "An error occurred. ")
+                }
             }
-            
-            let profileUrl = URL(string: "https://irs3.4sqi.net/img/user/original/HBVX4T2WQOGG20FE.png")
-
-            userService.setLocalUserWithFirebaseId(name: self.nameTxt.text!, email: emailTxt.text! , profileUrl: profileUrl?.absoluteString ?? "")
         }
 
-
-        /*
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = nameTxt.text!
-        changeRequest?.photoURL = profileUrl
-        changeRequest?.commitChanges {
-            (error) in
-        }
-        */
     }
     
-    func validate() {
+    func validate() -> Bool {
         guard let name = nameTxt.text, name != "" else {
             print("name is empty")
             UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: false)
             nameTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: true)
@@ -87,7 +86,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("email is empty")
             UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
             emailTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
@@ -96,7 +95,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("password is empty")
             UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: false)
             passwordTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: true)
@@ -107,35 +106,13 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("retype password is empty")
             UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: false)
             passwordRetypeTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: true)
+        
+        return true
     }
-    
-    /*
-    func addNavigationBar() {
-        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height:44))
-
-        navigationBar.backgroundColor = UIColor.white
-
-        // Create a navigation item with a title
-        let navigationItem = UINavigationItem()
-        navigationItem.title = "Title"
-
-        // Create left and right button for navigation item
-         let leftButton =  UIBarButtonItem(title: "Login", style:   .plain, target: self, action: #selector(navigationBackButton(_:)))
-
-        // Create two buttons for the navigation item
-        navigationItem.leftBarButtonItem = leftButton
-
-        // Assign the navigation item to the navigation bar
-        navigationBar.items = [navigationItem]
-
-        // Make the navigation bar a subview of the current view controller
-        self.view.addSubview(navigationBar)
-    }
-     */
     
     @objc func navigationBackButton(_ sender: UIBarButtonItem) {
     }

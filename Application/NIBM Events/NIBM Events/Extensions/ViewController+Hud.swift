@@ -28,7 +28,7 @@ extension UIViewController {
     }
     
     func simpleAlert(_ mess:String) {
-        let alert = UIAlertController(title: APP_NAME, message: mess, preferredStyle: .alert)
+        let alert = UIAlertController(title: Bundle.appName(), message: mess, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)

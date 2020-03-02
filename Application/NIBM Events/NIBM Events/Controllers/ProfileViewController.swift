@@ -18,7 +18,6 @@ class ProfileViewController: BaseViewController,
     
     /* Variables */
     var imagePicker: ImagePicker!
-    let rootRef = Database.database().reference()
     var localUser:User!
     
     override func viewDidLoad() {
@@ -32,10 +31,19 @@ class ProfileViewController: BaseViewController,
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 
         self.localUser = userService.getLocalUser()
+        print("local user: \(self.localUser)")
         
         fullNameTxt.text = self.localUser.name
         emailTxt.text = self.localUser.email
         facebookProfileTxt.text = self.localUser.profileUrl
+        
+        // get event image
+        if self.localUser.photoUrl != "" {
+            let url = URL(string: self.localUser.photoUrl)
+            profileImage.kf.setImage(with: url)
+        }
+        
+        self.navigationController?.viewControllers.remove(at: 0)
     }
     
     
@@ -75,67 +83,49 @@ class ProfileViewController: BaseViewController,
         dismissKeyboard()
         
         print("----- updateProfileAction -----")
-        let localUser = userService.getLocalUser()
-        print("local user: \(localUser)")
-        var photoUrl = ""
         
-        if let image = self.profileImage.image {
-            storageService.uploadUserProfile(image: image, token: localUser.token) {
-                (isSuccess, url) in
-                photoUrl = url!
-                print("url: \(url)")
-            }
-        }
+        if validate() {
         
-        let user = User(
-            type: localUser.type,
-            token: localUser.token,
-            name: self.fullNameTxt.text!,
-            email: self.emailTxt.text!,
-            profileUrl: self.facebookProfileTxt.text!,
-            photoUrl: photoUrl
-        )
+            let localUser = userService.getLocalUser()
+            print("local user: \(localUser)")
         
-        self.userService.setLocalUser(user: user)
+            var photoUrl = localUser.photoUrl
         
-        let userRef = self.rootRef.child(COLLECTION_USERS)
+            var user = User(
+                type: localUser.type,
+                token: localUser.token,
+                name: fullNameTxt.text!,
+                email: emailTxt.text!,
+                profileUrl: self.facebookProfileTxt.text!,
+                photoUrl: localUser.photoUrl
+            )
+        
+            if let image = self.profileImage.image {
                 
-        let firebaseUser: [String: String] = [
-            USER_AUTH_TYPE: user.type.toString(),
-            USER_TOKEN: user.token,
-            USER_NAME: user.name,
-            USER_EMAIL: user.email,
-            USER_PROFILE: user.profileUrl
-        ]
+                print("should update user prifile with new image")
+                
+                storageService.uploadUserProfile(image: image, token: localUser.token) {
+                    (isSuccess, url) in
+                    photoUrl = url!
+                    
+                    user.photoUrl = photoUrl
+                    
+                    self.userService.setLocalUser(user: user)
+                    self.userService.saveUser(user: user)
+                }
+            } else {
+                self.userService.setLocalUser(user: user)
+                self.userService.saveUser(user: user)
+            }
+        
+            self.presentHideAlert(withTitle: Bundle.appName(), message: "Profile updated successfully.")
 
-        userRef.child(user.token).setValue(firebaseUser) {
-          (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-          } else {
-            print(ref)
-            print("Data saved successfully!")
-          }
+        } else {
+            self.presentHideAlert(withTitle: Bundle.appName(), message: "Name or email is empty")
+            return
         }
         
-        /*
-        let eventService = EventService()
-        eventService.create(for: self.profileImage.image!, token: user.token)
-        */
-        
-        /*
-        userRef.childByAutoId().setValue(firebaseUser) {
-          (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-          } else {
-            print(ref)
-            print("Data saved successfully!")
-          }
-        }
-        */
-        
-        
+                
 //        // This string containes standard HTML tags, you can edit them as you wish
 //        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>\(messageTxt!.text!)<br><br>You can reply to: \(emailTxt!.text!)</font>"
 //        
@@ -167,6 +157,29 @@ class ProfileViewController: BaseViewController,
 
     }
     
+    
+    func validate() -> Bool {
+        
+        guard let name = fullNameTxt.text, name != "" else {
+            print("Name is not valid")
+                UIViewUtils.setUnsetError(of: fullNameTxt, forValidStatus: false)
+            return false
+        }
+        
+        UIViewUtils.setUnsetError(of: fullNameTxt, forValidStatus: true)
+        
+        guard let email = emailTxt.text,
+            email != "",
+            Validator.isValidEmail(email) else {
+            print("email is not valid")
+            UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
+            return false
+        }
+        
+        UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
+            
+        return true
+    }
     
     // Email delegate
     func mailComposeController(_ controller:MFMailComposeViewController, didFinishWith result:MFMailComposeResult, error:Error?) {

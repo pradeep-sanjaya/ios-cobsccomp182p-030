@@ -32,9 +32,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         if (isUserLogedIn) {
+            /*
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as? MainTabBarController
             UIApplication.shared.windows.first?.rootViewController = mainTabBarController
+            */
+            
+            let storyboardMain : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboardMain.instantiateViewController(withIdentifier: "MainTabBar") as? MainTabBarController
+            
+            let storyboardLogin : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let touchIdViewController = storyboardLogin.instantiateViewController(withIdentifier: "TouchIdViewController") as? TouchIdViewController
+            touchIdViewController?.nextViewController = mainTabBarController
+                
+            UIApplication.shared.windows.first?.rootViewController = touchIdViewController
+            
         } else {
             let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let mainNavigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController

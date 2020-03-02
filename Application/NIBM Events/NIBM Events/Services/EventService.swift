@@ -44,15 +44,7 @@ class EventService {
                     self.storageService.uploadEvent(image: providedImage, eventId: ref.key!) {
                         (status, url) in
                         print("---- url: \(url) ----")
-                        //ref.setValue(["image": url])
-                        //eventRef.child("\(ref.key!)").setValue(url)
-                        //eventRef.child("\(ref.key!)").setValue(["image": url])
                         
-                        //let childUpdates = ["/events/\(ref.key!)/image": url]
-                        //eventRef.updateChildValues(childUpdates)
-                        
-                        //let childUpdates = ["/events/\(ref.key!)/image": url]
-                        //eventRef.child("\(ref.key!)").setValue(["image": url])
                         eventRef.child("\(ref.key!)").updateChildValues(["image": url])
 
                     }
@@ -60,10 +52,6 @@ class EventService {
                 
             }
         }
-        
-        
-        
-
 
     }
 }

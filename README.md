@@ -21,12 +21,16 @@ NIBM ID: COBSCCOMP182P-030
 
 ### Facebook SDK
 -[Facebook Login for iOS - Quickstart](https://developers.facebook.com/docs/facebook-login/ios)
--[facebook-ios-sdk](https://github.com/facebook/facebook-ios-sdk)
+-[Facebook iOS SDK](https://github.com/facebook/facebook-ios-sdk)
+-[Facebook User Graph Reference](https://developers.facebook.com/docs/graph-api/reference/user/)
 
 ### Firebase
 - [Get Started with Firebase Authentication on iOS](https://firebase.google.com/docs/auth/ios/start)
 - [Create a Storage Reference on iOS](https://firebase.google.com/docs/storage/ios/create-reference)
 - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
+
+### Sensors
+- [Working with Touch ID API in iOS 8 SDK](https://www.appcoda.com/touch-id-api-ios8/)
 
 ### Storyboard and View Controller
 - [How To Set Application Root View Controller Programmatically In Xcode 11](https://www.dev2qa.com/how-to-set-application-root-view-controller-programmatically-in-xcode-11/)

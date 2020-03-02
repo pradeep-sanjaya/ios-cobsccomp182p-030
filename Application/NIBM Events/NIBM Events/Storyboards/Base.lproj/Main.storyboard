@@ -170,7 +170,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zIA-1H-Nb5" userLabel="searchTxt">
                                         <rect key="frame" x="16" y="46" width="288" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" name="DarkBlue"/>
+                                        <color key="textColor" name="White"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
                                         <connections>
@@ -178,7 +178,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" name="Background5"/>
+                                <color key="backgroundColor" name="Background2"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="Background4"/>
@@ -459,7 +459,7 @@
         <!--Profile View Controller-->
         <scene sceneID="pxc-9M-Orp">
             <objects>
-                <viewController id="zXH-IW-OnR" customClass="ProfileViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="zXH-IW-OnR" customClass="ProfileViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uop-nw-Vck"/>
                         <viewControllerLayoutGuide type="bottom" id="Zqm-KQ-A5W"/>
@@ -479,17 +479,18 @@
                                         <color key="textColor" red="0.1824207165" green="0.2145885287" blue="0.25577965559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-Sl-cvh" userLabel="profilePhoto">
-                                        <rect key="frame" x="11" y="43" width="298" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-Sl-cvh" userLabel="profilePhoto" customClass="RoundedImageView" customModule="NIBM_Events" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="43" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="Background3"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woB-xx-vAy" userLabel="chooseImage">
-                                        <rect key="frame" x="10" y="43" width="298" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="92" maxX="0.0" maxY="0.0"/>
+                                        <rect key="frame" x="10" y="43" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="TAP TO CHOOSE IMAGE">
-                                            <color key="titleColor" name="DarkBlue"/>
+                                            <color key="titleColor" name="White"/>
                                         </state>
                                         <connections>
                                             <action selector="chooseImageAction:" destination="zXH-IW-OnR" eventType="touchUpInside" id="Tap-dV-HG6"/>
@@ -881,7 +882,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_home" id="hLq-F2-n3X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLh-jl-fqF" customClass="MainNavigationBar" customModule="NIBM_Events" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="LightBloe"/>
                         <color key="barTintColor" name="Background1"/>
@@ -908,7 +909,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_submit" id="oVn-1M-XWw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Geg-Sz-rEj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -925,14 +926,14 @@
             </objects>
             <point key="canvasLocation" x="-1149" y="424"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Navigation Controller-->
         <scene sceneID="zes-As-RF2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEN-AN-sYw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEN-AN-sYw" customClass="ProfileNavigationController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_profile" id="0LU-G1-5cp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3N-T3-K8v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -941,9 +942,6 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zXH-IW-OnR" kind="relationship" relationship="rootViewController" id="2pP-QR-MUZ"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB2-tF-UdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -969,14 +967,14 @@
         <namedColor name="Background4">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="Background5">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.2199999988079071" green="0.29600000381469727" blue="0.62900000810623169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightBloe">
             <color red="0.032999999821186066" green="0.30899998545646667" blue="0.6600000262260437" alpha="0.73400002717971802" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

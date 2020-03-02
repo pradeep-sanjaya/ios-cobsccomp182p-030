@@ -82,14 +82,9 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     @IBAction func loginButt(_ sender: UIButton) {
         validateEmailAndPassword()
         
-        
-//        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!) {
-//            (user, error) in
-//            if let e = error {
-//                print(e)
-//                return
-//            }
-//        }
+        guard emailTxt.text! != "", passwordTxt.text! != "" else {
+            return
+        }
         
         userService.login(withEmail: emailTxt.text!, password: passwordTxt.text!) {
             [weak self] error in
@@ -132,6 +127,7 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     }
     
     @IBAction private func loginWithFacebookButt() {
+        
         let loginManager = LoginManager()
         loginManager.logIn(
             permissions: [.email, .publicProfile],
@@ -139,6 +135,11 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
         ) { result in
             self.loginManagerDidComplete(result)
         }
+    }
+    
+    @IBAction func viewAsGuestAction(_ sender: UIButton) {
+        UserMode.isAnonymous = true
+        self.setRootViewController(name: "MainTabBar")
     }
     
     @IBAction func getInfoAction(_ sender: UIButton) {
@@ -197,6 +198,9 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     }
     
     func getFacebookUserData() {
+        
+        showHUD()
+        
         if ((AccessToken.current) != nil) {
             GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: {
                 (connection, result, error) -> Void in
@@ -208,10 +212,10 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                     
                     //print("facebook graph data: \(userDict)")
                     
-                    var token           = ""
-                    var name            = ""
-                    var email           = ""
-                    var profilePhotoUrl = ""
+                    var token    = ""
+                    var name     = ""
+                    var email    = ""
+                    var photoUrl = ""
                     
                     if let fbId = userDict["id"] as? String {
                         token = fbId
@@ -228,38 +232,57 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                     if let picture = userDict["picture"] as? [String:Any],
                         let imgData = picture["data"] as? [String:Any],
                         let imgUrl = imgData["url"] as? String {
-
-                        /*
-                        print(imgUrl)
-                        print(url ?? "")
-                        print(imgData)
-                        */
                         
-                        profilePhotoUrl = imgUrl
-                        
-                        /*
-                        let imageUrl:URL = URL(string: imgUrl)!
-                        
-                        DispatchQueue.global(qos: .userInitiated).async  {
-                            
-                            let imageData:Data = try! Data(contentsOf: imageUrl)
-                            
-                            // Add photo to a cell as a subview
-                            DispatchQueue.main.async {
-                                let image = UIImage(data: imageData)
-                                //self.profileImage.image = image
-                                //self.profileImage.contentMode = UIView.ContentMode.scaleAspectFit
-                            }
-                        }
-                        */
+                        photoUrl = imgUrl
                     }
+                    
+
+                    
+                    var fbUser = User(
+                        type: AuthType.facebook,
+                        token: token,
+                        name: name,
+                        email: email,
+                        profileUrl: "",
+                        photoUrl: photoUrl
+                    )
+                    
+                    self.userService.getUser(token: token) {
+                        firebaseUser in
+                        if let fireUser = firebaseUser {
+                            fbUser.profileUrl = fireUser.profileUrl
+                            
+                            if (fireUser.photoUrl == "") {
+                                self.storageService.getImageByURLString(urlString: photoUrl) {
+                                    image in
+                                    
+                                    self.storageService.uploadUserProfile(image: image, token: fbUser.token) {
+                                        (isSuccess, url) in
+                                        photoUrl = url!
+                                        
+                                        fbUser.photoUrl = photoUrl
+                                        
+                                        self.userService.saveUser(user: fbUser)
+                                        self.userService.setLocalUser(user: fbUser)
+                                    }
+                                }
+                            } else {
+                                self.userService.saveUser(user: fbUser)
+                                self.userService.setLocalUser(user: fbUser)
+                            }
                         
-                    let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl, photoUrl: "")
-                    self.userService.setLocalUser(user: fbUser)
+                        } else {
+                            self.userService.saveUser(user: fbUser)
+                            self.userService.setLocalUser(user: fbUser)
+                        }
+                    }
 
                     self.setRootViewController(name: "MainTabBar")
-                    
+
+                    self.hideHUD()
+
                 } else {
+                    self.hideHUD()
                     self.presentHideAlert(withTitle: Bundle.appName(), message: "An error occurred")
                 }
             })
