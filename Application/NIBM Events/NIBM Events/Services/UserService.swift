@@ -5,9 +5,9 @@ import FacebookLogin
 class UserService {
     
     let defaults = UserDefaults.standard
-    
-    
-    // firebase
+    let rootRef = Database.database().reference()
+
+    // firebase auth
     func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
           Auth.auth().createUser(withEmail: email, password: password) {
             
@@ -159,18 +159,49 @@ class UserService {
     }
 
     public func setLocalUser(user: User) {
-        let userDictonary = ["type": user.type.toString(), "token": user.token, "name": user.name, "email": user.email,  "profileUrl": user.profileUrl]
+        let userDictonary = [
+            "type": user.type.toString(),
+            "token": user.token,
+            "name": user.name,
+            "email": user.email,
+            "profileUrl": user.profileUrl,
+            "photoUrl": user.photoUrl
+        ]
+        
         defaults.set(userDictonary, forKey: "user")
     }
     
     public func setLocalUserWithFirebaseId(name: String, email: String, profileUrl: String) {
+        
+        print("--- setLocalUserWithFirebaseId ---")
+            
         guard let userId = self.getFirebaseUserId() else {
             return
         }
+
+        var user = User(
+            type: AuthType.firebase,
+            token: userId,
+            name: name,
+            email: email,
+            profileUrl: "",
+            photoUrl: ""
+        )
         
-        let user = User(type: AuthType.firebase, token: userId, name: name, email: email, profileUrl: profileUrl , photoUrl: "")
+        getUser(token: userId) {
+            firebaseUser in
+            
+            if let fireUser = firebaseUser {
+                user.name = fireUser.name
+                user.profileUrl = fireUser.profileUrl
+                user.photoUrl = fireUser.photoUrl
+            }
+            
+            self.setLocalUser(user: user)
+            
+            print("user: \(user)")
+        }
         
-        self.setLocalUser(user: user)
     }
     
     public func signOut() {
@@ -179,4 +210,60 @@ class UserService {
         defaults.removeObject(forKey:"user")
     }
 
+    // firebase database
+    
+    public func saveUser(user: User) {
+        
+        setLocalUser(user: user)
+        
+        let userRef = self.rootRef.child(COLLECTION_USERS)
+                
+        let firebaseUser: [String: String] = [
+            USER_AUTH_TYPE: user.type.toString(),
+            USER_TOKEN: user.token,
+            USER_NAME: user.name,
+            USER_EMAIL: user.email,
+            USER_PROFILE: user.profileUrl,
+            USER_PHOTO: user.photoUrl
+        ]
+
+        userRef.child(user.token).setValue(firebaseUser) {
+          (error:Error?, ref:DatabaseReference) in
+          if let error = error {
+            print("Data could not be saved: \(error).")
+          } else {
+            print(ref)
+            print("Data saved successfully!")
+          }
+        }
+    }
+    
+    public func getUser(token: String, callback: @escaping (User?) -> Void) -> Void {
+        
+        let userRef = self.rootRef.child(COLLECTION_USERS)
+        
+        userRef.child(token).observe(DataEventType.value, with: {
+            (snapshot) in
+            let userDict = snapshot.value as? [String : AnyObject] ?? [:]
+            
+            let authType   = userDict[USER_AUTH_TYPE] as? String ?? ""
+            let name       = userDict[USER_NAME] as? String ?? ""
+            let email      = userDict[USER_EMAIL] as? String ?? ""
+            let profileUrl = userDict[USER_PROFILE] as? String ?? ""
+            let photoUrl   = userDict[USER_PHOTO] as? String ?? ""
+
+            let user = User(
+                type: AuthType.getAuthTypeByString(value: authType),
+                token: token,
+                name: name,
+                email: email,
+                profileUrl: profileUrl,
+                photoUrl: photoUrl
+            )
+            
+            callback(user)
+        })
+        
+        callback(nil);
+    }
 }

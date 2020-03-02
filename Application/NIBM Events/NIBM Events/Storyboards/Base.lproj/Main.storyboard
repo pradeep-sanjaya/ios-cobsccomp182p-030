@@ -479,17 +479,18 @@
                                         <color key="textColor" red="0.1824207165" green="0.2145885287" blue="0.25577965559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-Sl-cvh" userLabel="profilePhoto">
-                                        <rect key="frame" x="11" y="43" width="298" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-Sl-cvh" userLabel="profilePhoto" customClass="RoundedImageView" customModule="NIBM_Events" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="43" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="Background3"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woB-xx-vAy" userLabel="chooseImage">
-                                        <rect key="frame" x="10" y="43" width="298" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="92" maxX="0.0" maxY="0.0"/>
+                                        <rect key="frame" x="10" y="43" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="TAP TO CHOOSE IMAGE">
-                                            <color key="titleColor" name="DarkBlue"/>
+                                            <color key="titleColor" name="White"/>
                                         </state>
                                         <connections>
                                             <action selector="chooseImageAction:" destination="zXH-IW-OnR" eventType="touchUpInside" id="Tap-dV-HG6"/>
@@ -881,7 +882,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_home" id="hLq-F2-n3X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLh-jl-fqF" customClass="MainNavigationBar" customModule="NIBM_Events" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="LightBloe"/>
                         <color key="barTintColor" name="Background1"/>
@@ -908,7 +909,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_submit" id="oVn-1M-XWw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Geg-Sz-rEj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -932,7 +933,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_profile" id="0LU-G1-5cp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3N-T3-K8v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Background1"/>
@@ -977,6 +978,9 @@
         </namedColor>
         <namedColor name="LightBloe">
             <color red="0.032999999821186066" green="0.30899998545646667" blue="0.6600000262260437" alpha="0.73400002717971802" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

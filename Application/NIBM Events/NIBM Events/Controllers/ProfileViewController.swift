@@ -18,7 +18,6 @@ class ProfileViewController: BaseViewController,
     
     /* Variables */
     var imagePicker: ImagePicker!
-    let rootRef = Database.database().reference()
     var localUser:User!
     
     override func viewDidLoad() {
@@ -32,10 +31,17 @@ class ProfileViewController: BaseViewController,
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 
         self.localUser = userService.getLocalUser()
+        print("local user: \(self.localUser)")
         
         fullNameTxt.text = self.localUser.name
         emailTxt.text = self.localUser.email
         facebookProfileTxt.text = self.localUser.profileUrl
+        
+        // get event image
+        if self.localUser.photoUrl != "" {
+            let url = URL(string: self.localUser.photoUrl)
+            profileImage.kf.setImage(with: url)
+        }
     }
     
     
@@ -77,47 +83,37 @@ class ProfileViewController: BaseViewController,
         print("----- updateProfileAction -----")
         let localUser = userService.getLocalUser()
         print("local user: \(localUser)")
-        var photoUrl = ""
         
-        if let image = self.profileImage.image {
-            storageService.uploadUserProfile(image: image, token: localUser.token) {
-                (isSuccess, url) in
-                photoUrl = url!
-                print("url: \(url)")
-            }
-        }
+        var photoUrl = localUser.photoUrl
         
-        let user = User(
+        var user = User(
             type: localUser.type,
             token: localUser.token,
             name: self.fullNameTxt.text!,
             email: self.emailTxt.text!,
             profileUrl: self.facebookProfileTxt.text!,
-            photoUrl: photoUrl
+            photoUrl: localUser.photoUrl
         )
         
-        self.userService.setLocalUser(user: user)
-        
-        let userRef = self.rootRef.child(COLLECTION_USERS)
+        if let image = self.profileImage.image {
+            
+            print("should update user prifile with new image")
+            
+            storageService.uploadUserProfile(image: image, token: localUser.token) {
+                (isSuccess, url) in
+                photoUrl = url!
                 
-        let firebaseUser: [String: String] = [
-            USER_AUTH_TYPE: user.type.toString(),
-            USER_TOKEN: user.token,
-            USER_NAME: user.name,
-            USER_EMAIL: user.email,
-            USER_PROFILE: user.profileUrl
-        ]
-
-        userRef.child(user.token).setValue(firebaseUser) {
-          (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-          } else {
-            print(ref)
-            print("Data saved successfully!")
-          }
+                user.photoUrl = photoUrl
+                
+                self.userService.setLocalUser(user: user)
+                self.userService.saveUser(user: user)
+            }
+        } else {
+            self.userService.setLocalUser(user: user)
+            self.userService.saveUser(user: user)
         }
         
+        self.presentHideAlert(withTitle: Bundle.appName(), message: "Profile updated successfully.")
         
 //        // This string containes standard HTML tags, you can edit them as you wish
 //        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>\(messageTxt!.text!)<br><br>You can reply to: \(emailTxt!.text!)</font>"

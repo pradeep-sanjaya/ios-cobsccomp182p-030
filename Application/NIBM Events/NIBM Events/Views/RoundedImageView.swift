@@ -7,8 +7,9 @@ class RoundedImageView: UIImageView {
         
         layer.borderWidth = 2.0
         layer.masksToBounds = false
-        layer.borderColor = UIColor.init(named: "DarkBlue")!.cgColor
-        layer.cornerRadius = frame.size.width / 2
+        layer.borderColor = UIColor.init(named: "Black")!.cgColor
+        frame.size.width = frame.size.height
+        layer.cornerRadius = frame.size.height / 2
         clipsToBounds = true
         layer.zPosition = -500;
     }

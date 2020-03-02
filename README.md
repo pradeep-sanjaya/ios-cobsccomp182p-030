@@ -21,7 +21,8 @@ NIBM ID: COBSCCOMP182P-030
 
 ### Facebook SDK
 -[Facebook Login for iOS - Quickstart](https://developers.facebook.com/docs/facebook-login/ios)
--[facebook-ios-sdk](https://github.com/facebook/facebook-ios-sdk)
+-[Facebook iOS SDK](https://github.com/facebook/facebook-ios-sdk)
+-[Facebook User Graph Reference](https://developers.facebook.com/docs/graph-api/reference/user/)
 
 ### Firebase
 - [Get Started with Firebase Authentication on iOS](https://firebase.google.com/docs/auth/ios/start)

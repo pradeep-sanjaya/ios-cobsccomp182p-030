@@ -60,6 +60,9 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
                 
                 self.userService.setLocalUserWithFirebaseId(name: self.nameTxt.text!, email: email, profileUrl: "")
                 
+                let user = self.userService.getLocalUser()
+                self.userService.saveUser(user: user)
+                
                 self.setRootViewController(name: "MainTabBar")
             }
 

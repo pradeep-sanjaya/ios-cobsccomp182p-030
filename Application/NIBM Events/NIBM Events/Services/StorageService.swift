@@ -64,5 +64,22 @@ class StorageService {
             }
         }
     }
+    
+    public func getImageByURLString(urlString: String, callback: @escaping (UIImage) -> Void)  {
+        URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+
+            if error != nil {
+                print(error ?? "No Error")
+                return
+            }
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+                if let image = UIImage(data: data!) {
+                    callback(image)
+                }
+            })
+
+        }).resume()
+    }
 }
 

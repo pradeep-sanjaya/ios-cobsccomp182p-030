@@ -51,10 +51,11 @@ let COLLECTION_USERS  = "users"
 let COLLECTION_EVENTS = "events"
 
 let USER_TOKEN        = "token"
+let USER_AUTH_TYPE    = "authType"
 let USER_NAME         = "name"
 let USER_EMAIL        = "email"
 let USER_PROFILE      = "profileUrl"
-let USER_AUTH_TYPE    = "authType"
+let USER_PHOTO        = "photoUrl"
 
 let EVENT_TITLE       = "title"
 let EVENT_DESCRIPTION = "description"

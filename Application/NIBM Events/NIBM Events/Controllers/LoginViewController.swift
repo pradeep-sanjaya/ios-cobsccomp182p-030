@@ -123,6 +123,7 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     }
     
     @IBAction private func loginWithFacebookButt() {
+        
         let loginManager = LoginManager()
         loginManager.logIn(
             permissions: [.email, .publicProfile],
@@ -188,6 +189,9 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     }
     
     func getFacebookUserData() {
+        
+        showHUD()
+        
         if ((AccessToken.current) != nil) {
             GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: {
                 (connection, result, error) -> Void in
@@ -199,10 +203,10 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                     
                     //print("facebook graph data: \(userDict)")
                     
-                    var token           = ""
-                    var name            = ""
-                    var email           = ""
-                    var profilePhotoUrl = ""
+                    var token    = ""
+                    var name     = ""
+                    var email    = ""
+                    var photoUrl = ""
                     
                     if let fbId = userDict["id"] as? String {
                         token = fbId
@@ -220,16 +224,47 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                         let imgData = picture["data"] as? [String:Any],
                         let imgUrl = imgData["url"] as? String {
                         
-                        profilePhotoUrl = imgUrl
-
+                        photoUrl = imgUrl
                     }
-                        
-                    let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl, photoUrl: "")
-                    self.userService.setLocalUser(user: fbUser)
-
-                    self.setRootViewController(name: "MainTabBar")
                     
+
+                    
+                    var fbUser = User(
+                        type: AuthType.facebook,
+                        token: token,
+                        name: name,
+                        email: email,
+                        profileUrl: "",
+                        photoUrl: photoUrl
+                    )
+                    
+                    self.storageService.getImageByURLString(urlString: photoUrl) {
+                        image in
+                        
+                        self.storageService.uploadUserProfile(image: image, token: fbUser.token) {
+                            (isSuccess, url) in
+                            photoUrl = url!
+                            
+                            fbUser.photoUrl = photoUrl
+                            
+                            self.userService.getUser(token: token) {
+                                firebaseUser in
+                                if let fireUser = firebaseUser {
+                                    fbUser.profileUrl = fireUser.profileUrl
+                                }
+                            }
+                            
+                            self.setRootViewController(name: "MainTabBar")
+                        }
+                    }
+                    
+                    self.userService.saveUser(user: fbUser)
+                    self.userService.setLocalUser(user: fbUser)
+                    
+                    self.hideHUD()
+
                 } else {
+                    self.hideHUD()
                     self.presentHideAlert(withTitle: Bundle.appName(), message: "An error occurred")
                 }
             })
