@@ -7,12 +7,13 @@ class EventService {
 
     let rootRef = Database.database().reference()
     let userService = UserService()
+    let storageService = StorageService()
     
-    func create(event: Event)  {
+    func create(event: Event, image: UIImage?)  {
         let localUser = self.userService.getLocalUser()
         
         let eventRef = self.rootRef.child(COLLECTION_EVENTS)
-           
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
@@ -31,13 +32,38 @@ class EventService {
         ]
 
         eventRef.childByAutoId().setValue(firebaseEvent) {
-          (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-          } else {
-            print(ref)
-            print("Data saved successfully!")
-          }
+            (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+                print("Data could not be saved: \(error).")
+                print("----- reference : \(ref) -------")
+            } else {
+                print("key: \(ref.key)")
+                
+                if let providedImage = image {
+                    print(providedImage)
+                    self.storageService.uploadEvent(image: providedImage, eventId: ref.key!) {
+                        (status, url) in
+                        print("---- url: \(url) ----")
+                        //ref.setValue(["image": url])
+                        //eventRef.child("\(ref.key!)").setValue(url)
+                        //eventRef.child("\(ref.key!)").setValue(["image": url])
+                        
+                        //let childUpdates = ["/events/\(ref.key!)/image": url]
+                        //eventRef.updateChildValues(childUpdates)
+                        
+                        //let childUpdates = ["/events/\(ref.key!)/image": url]
+                        //eventRef.child("\(ref.key!)").setValue(["image": url])
+                        eventRef.child("\(ref.key!)").updateChildValues(["image": url])
+
+                    }
+                }
+                
+            }
         }
+        
+        
+        
+
+
     }
 }

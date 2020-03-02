@@ -2,6 +2,7 @@ import UIKit
 import Parse
 import AudioToolbox
 import Kingfisher
+import Firebase
 
 class EventCell: UICollectionViewCell {
     
@@ -34,10 +35,17 @@ class HomeViewController: UIViewController,
     @IBOutlet weak var searchOutlet: UIBarButtonItem!
     
     /* Variables */
-    var eventsArray = [Event]()
+    var eventsArray = [Event]() {
+        didSet {
+            self.eventsCollView.reloadData()
+        }
+    }
     var cellSize = CGSize()
     var searchViewIsVisible = false
     
+    let rootRef = Database.database().reference()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,7 +81,55 @@ class HomeViewController: UIViewController,
     // MARK: - Get latest events
     func queryLatestEvents() {
         showHUD()
+        self.eventsArray.removeAll()
         
+        let eventRef = self.rootRef.child(COLLECTION_EVENTS)
+        
+        eventRef.observe(.childAdded, with: {
+            (snapshot) -> Void in
+            
+            let eventDict = snapshot.value as? [String : AnyObject] ?? [:]
+
+            var start = Date()
+            var end = Date()
+            var isPending = false
+            
+            if let startDate = eventDict["startDate"] as? String {
+                start = startDate.toDate()
+            }
+            
+            if let endDate = eventDict["endDate"] as? String {
+                end = endDate.toDate()
+            }
+            
+            if let boolString = eventDict["isPending"] as? String {
+                isPending = boolString.bool!
+            }
+            
+            let event = Event(
+                id: "1",
+                title: eventDict["title"] as? String ?? "",
+                location: eventDict["location"] as? String ?? "",
+                description: eventDict["description"] as? String ?? "",
+                website: eventDict["website"] as? String ?? "",
+                startDate: start,
+                endDate: end,
+                cost: eventDict["cost"] as? String ?? "",
+                image: eventDict["image"] as? String ?? "",
+                isPending: isPending,
+                keywords: eventDict["keywards"] as? String ?? "",
+                user: eventDict["user"] as? String ?? ""
+            )
+            
+            self.eventsArray.append(event)
+            self.hideHUD()
+            
+            print(self.eventsArray)
+        })
+        
+        self.hideHUD()
+        
+        /*
         self.eventsArray = [
             Event(
                 id: "1",
@@ -102,28 +158,7 @@ class HomeViewController: UIViewController,
                 user: "rQKfZY5UfcPjIBHqrZvRLYOqdii2"
             )
         ]
-        
-        self.hideHUD()
-        
-//        let query = PFQuery(className: EVENTS_CLASS_NAME)
-//
-//        let now = Date()
-//        query.whereKey(EVENTS_END_DATE, greaterThan: now)
-//
-//        query.whereKey(EVENTS_IS_PENDING, equalTo: false)
-//        query.order(byDescending: EVENTS_START_DATE)
-//        query.limit = limitForRecentEventsQuery
-//        // Query block
-//        query.findObjectsInBackground { (objects, error)-> Void in
-//            if error == nil {
-//                self.eventsArray = objects!
-//                self.eventsCollView.reloadData()
-//                self.hideHUD()
-//
-//            } else {
-//                self.simpleAlert("\(error!.localizedDescription)")
-//                self.hideHUD()
-//            }}
+        */
         
     }
     
@@ -230,42 +265,18 @@ class HomeViewController: UIViewController,
     // MARK: - Textfield deligate (tap Search on the keyboard to launch a search query) */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideSearchView()
-//        showHUD()
-//
-//        // Make a new Parse query
-//        eventsArray.removeAll()
-//        let keywords = searchTxt.text!.lowercased().components(separatedBy: " ")
-//        print("\(keywords)")
-//
+        showHUD()
+
+        // Make a new Parse query
+        eventsArray.removeAll()
+        let keywords = searchTxt.text!.lowercased().components(separatedBy: " ")
+        print("\(keywords)")
+
+        self.queryLatestEvents()
+        
 //        let query = PFQuery(className: EVENTS_CLASS_NAME)
 //        if searchTxt.text != ""   { query.whereKey(EVENTS_KEYWORDS, containedIn: keywords) }
 //        query.whereKey(EVENTS_IS_PENDING, equalTo: false)
-//
-//
-//        // Query block
-//        query.findObjectsInBackground { (objects, error)-> Void in
-//            if error == nil {
-//                self.eventsArray = objects!
-//
-//                // EVENT FOUND
-//                if self.eventsArray.count > 0 {
-//                    self.eventsCollView.reloadData()
-//                    self.title = "Events Found"
-//                    self.hideHUD()
-//
-//                    // EVENT NOT FOUND
-//                } else {
-//                    self.simpleAlert("No results. Please try a different search")
-//                    self.hideHUD()
-//
-//                    self.queryLatestEvents()
-//                }
-//
-//                // error found
-//            } else {
-//                self.simpleAlert("\(error!.localizedDescription)")
-//                self.hideHUD()
-//            }}
 
 
         return true
@@ -300,7 +311,7 @@ class HomeViewController: UIViewController,
         hideSearchView()
         searchViewIsVisible = false
         
-        self.title = "Recent Events"
+        //self.title = "Recent Events"
     }
     
     override func didReceiveMemoryWarning() {

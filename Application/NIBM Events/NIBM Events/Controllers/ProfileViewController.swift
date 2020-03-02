@@ -24,7 +24,7 @@ class ProfileViewController: BaseViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Profile"
+        //self.title = "Profile"
         
         // Setup container ScrollView
         containerScrollView.contentSize = CGSize(width: containerScrollView.frame.size.width, height: updateOutlet.frame.origin.y + 250)

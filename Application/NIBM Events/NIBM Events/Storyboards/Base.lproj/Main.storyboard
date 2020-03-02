@@ -66,30 +66,30 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCt-ts-S9O" userLabel="eventImage">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
+                                                            <rect key="frame" x="0.0" y="55" width="290" height="115"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWk-RP-ZJA" userLabel="dateView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="140"/>
+                                                            <rect key="frame" x="0.0" y="55" width="90" height="115"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-mS-b1U" userLabel="dayNrLabel">
-                                                                    <rect key="frame" x="23" y="49" width="44" height="44"/>
+                                                                    <rect key="frame" x="23" y="35" width="44" height="44"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQA-GP-aQc" userLabel="yearLabel">
-                                                                    <rect key="frame" x="13" y="86" width="61" height="27"/>
+                                                                    <rect key="frame" x="13" y="69" width="61" height="27"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="april" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-Zs-kkQ" userLabel="monthLabel">
-                                                                    <rect key="frame" x="13" y="27" width="61" height="27"/>
+                                                                    <rect key="frame" x="13" y="16" width="61" height="27"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,44 +99,44 @@
                                                             <color key="backgroundColor" name="LightBloe"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="U6F-LF-1Dw" userLabel="titleLbl">
-                                                            <rect key="frame" x="8" y="148" width="188" height="38"/>
+                                                            <rect key="frame" x="8" y="188" width="188" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="LW9-PZ-mar" userLabel="locationLabel">
-                                                            <rect key="frame" x="8" y="187" width="188" height="23"/>
+                                                            <rect key="frame" x="8" y="210" width="188" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date &amp; Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="qsp-Ht-DW5" userLabel="timeLabel">
-                                                            <rect key="frame" x="8" y="211" width="188" height="23"/>
+                                                            <rect key="frame" x="8" y="234" width="188" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wce-5F-agk" userLabel="costView">
-                                                            <rect key="frame" x="203" y="139" width="90" height="130"/>
+                                                            <rect key="frame" x="203" y="170" width="90" height="99"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-rQ-6Lr" userLabel="costLabel">
-                                                                    <rect key="frame" x="13" y="68" width="61" height="27"/>
+                                                                    <rect key="frame" x="13" y="53" width="61" height="27"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="THj-id-HeY" userLabel="ticketImg">
-                                                                    <rect key="frame" x="29" y="14" width="30" height="30"/>
+                                                                    <rect key="frame" x="29" y="19" width="30" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" name="LightBloe"/>
                                                         </view>
                                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8q-3S-PVP" userLabel="profileImage" customClass="RoundedImageView" customModule="NIBM_Events" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="234" width="35" height="35"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" name="Background4"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
                                                         </imageView>
@@ -874,11 +874,11 @@
             </objects>
             <point key="canvasLocation" x="1772" y="1321"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="wGS-f9-5n6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zWC-7f-okG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="tab_home" id="hLq-F2-n3X"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_home" id="hLq-F2-n3X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLh-jl-fqF" customClass="MainNavigationBar" customModule="NIBM_Events" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -901,11 +901,11 @@
             </objects>
             <point key="canvasLocation" x="-1149" y="-603"/>
         </scene>
-        <!--Submit an Event-->
+        <!--Navigation Controller-->
         <scene sceneID="bdG-5L-oOe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xPf-f2-d3f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Submit an Event" image="tab_submit" id="oVn-1M-XWw"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_submit" id="oVn-1M-XWw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Geg-Sz-rEj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -925,11 +925,11 @@
             </objects>
             <point key="canvasLocation" x="-1149" y="424"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="zes-As-RF2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEN-AN-sYw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="tab_profile" id="0LU-G1-5cp"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_profile" id="0LU-G1-5cp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3N-T3-K8v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
