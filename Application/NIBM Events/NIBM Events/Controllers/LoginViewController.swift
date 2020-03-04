@@ -238,29 +238,38 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                         photoUrl: photoUrl
                     )
                     
-                    self.storageService.getImageByURLString(urlString: photoUrl) {
-                        image in
-                        
-                        self.storageService.uploadUserProfile(image: image, token: fbUser.token) {
-                            (isSuccess, url) in
-                            photoUrl = url!
+                    self.userService.getUser(token: token) {
+                        firebaseUser in
+                        if let fireUser = firebaseUser {
+                            fbUser.profileUrl = fireUser.profileUrl
                             
-                            fbUser.photoUrl = photoUrl
-                            
-                            self.userService.getUser(token: token) {
-                                firebaseUser in
-                                if let fireUser = firebaseUser {
-                                    fbUser.profileUrl = fireUser.profileUrl
+                            if (fireUser.photoUrl == "") {
+                                self.storageService.getImageByURLString(urlString: photoUrl) {
+                                    image in
+                                    
+                                    self.storageService.uploadUserProfile(image: image, token: fbUser.token) {
+                                        (isSuccess, url) in
+                                        photoUrl = url!
+                                        
+                                        fbUser.photoUrl = photoUrl
+                                        
+                                        self.userService.saveUser(user: fbUser)
+                                        self.userService.setLocalUser(user: fbUser)
+                                    }
                                 }
+                            } else {
+                                self.userService.saveUser(user: fbUser)
+                                self.userService.setLocalUser(user: fbUser)
                             }
-                            
-                            self.setRootViewController(name: "MainTabBar")
+                        
+                        } else {
+                            self.userService.saveUser(user: fbUser)
+                            self.userService.setLocalUser(user: fbUser)
                         }
                     }
-                    
-                    self.userService.saveUser(user: fbUser)
-                    self.userService.setLocalUser(user: fbUser)
-                    
+
+                    self.setRootViewController(name: "MainTabBar")
+
                     self.hideHUD()
 
                 } else {
