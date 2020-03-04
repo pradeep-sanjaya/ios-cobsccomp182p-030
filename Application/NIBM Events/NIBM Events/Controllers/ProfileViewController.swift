@@ -118,23 +118,6 @@ class ProfileViewController: BaseViewController,
           }
         }
         
-        /*
-        let eventService = EventService()
-        eventService.create(for: self.profileImage.image!, token: user.token)
-        */
-        
-        /*
-        userRef.childByAutoId().setValue(firebaseUser) {
-          (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-          } else {
-            print(ref)
-            print("Data saved successfully!")
-          }
-        }
-        */
-        
         
 //        // This string containes standard HTML tags, you can edit them as you wish
 //        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>\(messageTxt!.text!)<br><br>You can reply to: \(emailTxt!.text!)</font>"

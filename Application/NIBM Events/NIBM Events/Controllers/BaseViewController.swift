@@ -13,15 +13,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    /*
-    public func setRootViewController(name: String) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: name)
-
-        self.navigationController?.setViewControllers([homeViewController], animated: false)
-    }
-    */
-    
     public func setRootViewController(name: String) {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rootViewController = storyboard.instantiateViewController(withIdentifier: name)

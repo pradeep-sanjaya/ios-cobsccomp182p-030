@@ -82,15 +82,6 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     @IBAction func loginButt(_ sender: UIButton) {
         validateEmailAndPassword()
         
-        
-//        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!) {
-//            (user, error) in
-//            if let e = error {
-//                print(e)
-//                return
-//            }
-//        }
-        
         userService.login(withEmail: emailTxt.text!, password: passwordTxt.text!) {
             [weak self] error in
             guard let strongSelf = self else { return }
@@ -228,30 +219,9 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
                     if let picture = userDict["picture"] as? [String:Any],
                         let imgData = picture["data"] as? [String:Any],
                         let imgUrl = imgData["url"] as? String {
-
-                        /*
-                        print(imgUrl)
-                        print(url ?? "")
-                        print(imgData)
-                        */
                         
                         profilePhotoUrl = imgUrl
-                        
-                        /*
-                        let imageUrl:URL = URL(string: imgUrl)!
-                        
-                        DispatchQueue.global(qos: .userInitiated).async  {
-                            
-                            let imageData:Data = try! Data(contentsOf: imageUrl)
-                            
-                            // Add photo to a cell as a subview
-                            DispatchQueue.main.async {
-                                let image = UIImage(data: imageData)
-                                //self.profileImage.image = image
-                                //self.profileImage.contentMode = UIView.ContentMode.scaleAspectFit
-                            }
-                        }
-                        */
+
                     }
                         
                     let fbUser = User(type: AuthType.facebook, token: token, name: name, email: email, profileUrl: profilePhotoUrl, photoUrl: "")

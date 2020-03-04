@@ -164,8 +164,12 @@ class UserService {
     }
     
     public func setLocalUserWithFirebaseId(name: String, email: String, profileUrl: String) {
-        let userId = self.getFirebaseUserId()
-        let user = User(type: AuthType.firebase, token: userId!, name: name, email: email, profileUrl: profileUrl, photoUrl: "")
+        guard let userId = self.getFirebaseUserId() else {
+            return
+        }
+        
+        let user = User(type: AuthType.firebase, token: userId, name: name, email: email, profileUrl: profileUrl , photoUrl: "")
+        
         self.setLocalUser(user: user)
     }
     
