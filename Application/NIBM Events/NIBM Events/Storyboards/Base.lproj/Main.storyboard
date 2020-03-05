@@ -170,7 +170,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zIA-1H-Nb5" userLabel="searchTxt">
                                         <rect key="frame" x="16" y="46" width="288" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" name="DarkBlue"/>
+                                        <color key="textColor" name="White"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
                                         <connections>
@@ -178,7 +178,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" name="Background5"/>
+                                <color key="backgroundColor" name="Background2"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="Background4"/>
@@ -459,7 +459,7 @@
         <!--Profile View Controller-->
         <scene sceneID="pxc-9M-Orp">
             <objects>
-                <viewController id="zXH-IW-OnR" customClass="ProfileViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="zXH-IW-OnR" customClass="ProfileViewController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uop-nw-Vck"/>
                         <viewControllerLayoutGuide type="bottom" id="Zqm-KQ-A5W"/>
@@ -882,7 +882,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tab_home" id="hLq-F2-n3X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLh-jl-fqF" customClass="MainNavigationBar" customModule="NIBM_Events" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="LightBloe"/>
                         <color key="barTintColor" name="Background1"/>
@@ -926,10 +926,10 @@
             </objects>
             <point key="canvasLocation" x="-1149" y="424"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Navigation Controller-->
         <scene sceneID="zes-As-RF2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEN-AN-sYw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEN-AN-sYw" customClass="ProfileNavigationController" customModule="NIBM_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_profile" id="0LU-G1-5cp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3N-T3-K8v">
@@ -942,9 +942,6 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zXH-IW-OnR" kind="relationship" relationship="rootViewController" id="2pP-QR-MUZ"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB2-tF-UdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -969,9 +966,6 @@
         </namedColor>
         <namedColor name="Background4">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Background5">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.2199999988079071" green="0.29600000381469727" blue="0.62900000810623169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

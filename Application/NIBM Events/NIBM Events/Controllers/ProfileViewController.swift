@@ -42,6 +42,8 @@ class ProfileViewController: BaseViewController,
             let url = URL(string: self.localUser.photoUrl)
             profileImage.kf.setImage(with: url)
         }
+        
+        self.navigationController?.viewControllers.remove(at: 0)
     }
     
     
@@ -81,40 +83,49 @@ class ProfileViewController: BaseViewController,
         dismissKeyboard()
         
         print("----- updateProfileAction -----")
-        let localUser = userService.getLocalUser()
-        print("local user: \(localUser)")
         
-        var photoUrl = localUser.photoUrl
+        if validate() {
         
-        var user = User(
-            type: localUser.type,
-            token: localUser.token,
-            name: self.fullNameTxt.text!,
-            email: self.emailTxt.text!,
-            profileUrl: self.facebookProfileTxt.text!,
-            photoUrl: localUser.photoUrl
-        )
+            let localUser = userService.getLocalUser()
+            print("local user: \(localUser)")
         
-        if let image = self.profileImage.image {
-            
-            print("should update user prifile with new image")
-            
-            storageService.uploadUserProfile(image: image, token: localUser.token) {
-                (isSuccess, url) in
-                photoUrl = url!
+            var photoUrl = localUser.photoUrl
+        
+            var user = User(
+                type: localUser.type,
+                token: localUser.token,
+                name: fullNameTxt.text!,
+                email: emailTxt.text!,
+                profileUrl: self.facebookProfileTxt.text!,
+                photoUrl: localUser.photoUrl
+            )
+        
+            if let image = self.profileImage.image {
                 
-                user.photoUrl = photoUrl
+                print("should update user prifile with new image")
                 
+                storageService.uploadUserProfile(image: image, token: localUser.token) {
+                    (isSuccess, url) in
+                    photoUrl = url!
+                    
+                    user.photoUrl = photoUrl
+                    
+                    self.userService.setLocalUser(user: user)
+                    self.userService.saveUser(user: user)
+                }
+            } else {
                 self.userService.setLocalUser(user: user)
                 self.userService.saveUser(user: user)
             }
+        
+            self.presentHideAlert(withTitle: Bundle.appName(), message: "Profile updated successfully.")
+
         } else {
-            self.userService.setLocalUser(user: user)
-            self.userService.saveUser(user: user)
+            self.presentHideAlert(withTitle: Bundle.appName(), message: "Name or email is empty")
+            return
         }
         
-        self.presentHideAlert(withTitle: Bundle.appName(), message: "Profile updated successfully.")
-        
+                
 //        // This string containes standard HTML tags, you can edit them as you wish
 //        let messageStr = "<font size = '1' color= '#222222' style = 'font-family: 'HelveticaNeue'>\(messageTxt!.text!)<br><br>You can reply to: \(emailTxt!.text!)</font>"
 //        
@@ -146,6 +157,29 @@ class ProfileViewController: BaseViewController,
 
     }
     
+    
+    func validate() -> Bool {
+        
+        guard let name = fullNameTxt.text, name != "" else {
+            print("Name is not valid")
+                UIViewUtils.setUnsetError(of: fullNameTxt, forValidStatus: false)
+            return false
+        }
+        
+        UIViewUtils.setUnsetError(of: fullNameTxt, forValidStatus: true)
+        
+        guard let email = emailTxt.text,
+            email != "",
+            Validator.isValidEmail(email) else {
+            print("email is not valid")
+            UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
+            return false
+        }
+        
+        UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
+            
+        return true
+    }
     
     // Email delegate
     func mailComposeController(_ controller:MFMailComposeViewController, didFinishWith result:MFMailComposeResult, error:Error?) {

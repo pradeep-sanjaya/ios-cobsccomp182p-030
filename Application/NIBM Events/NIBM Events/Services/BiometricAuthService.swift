@@ -34,7 +34,8 @@ class BiometricAuthService {
             return
         }
         
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: loginReason) { (success, evaluateError) in
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: loginReason) {
+            (success, evaluateError) in
             if success {
                 DispatchQueue.main.async {
                     // User authenticated successfully, take appropriate action

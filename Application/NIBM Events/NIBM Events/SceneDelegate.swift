@@ -38,8 +38,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UIApplication.shared.windows.first?.rootViewController = mainTabBarController
             */
             
-            let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-            let touchIdViewController = storyboard.instantiateViewController(withIdentifier: "TouchIdViewController") as? UIViewController
+            let storyboardMain : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboardMain.instantiateViewController(withIdentifier: "MainTabBar") as? MainTabBarController
+            
+            let storyboardLogin : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let touchIdViewController = storyboardLogin.instantiateViewController(withIdentifier: "TouchIdViewController") as? TouchIdViewController
+            touchIdViewController?.nextViewController = mainTabBarController
+                
             UIApplication.shared.windows.first?.rootViewController = touchIdViewController
             
         } else {

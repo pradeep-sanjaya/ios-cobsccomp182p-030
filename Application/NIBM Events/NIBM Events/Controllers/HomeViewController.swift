@@ -88,6 +88,8 @@ class HomeViewController: UIViewController,
         eventRef.observe(.childAdded, with: {
             (snapshot) -> Void in
             
+            //print("key: \(snapshot.key)")
+            
             let eventDict = snapshot.value as? [String : AnyObject] ?? [:]
 
             var start = Date()
@@ -107,7 +109,7 @@ class HomeViewController: UIViewController,
             }
             
             let event = Event(
-                id: "1",
+                id: "\(snapshot.key)",
                 title: eventDict["title"] as? String ?? "",
                 location: eventDict["location"] as? String ?? "",
                 description: eventDict["description"] as? String ?? "",
@@ -124,7 +126,7 @@ class HomeViewController: UIViewController,
             self.eventsArray.append(event)
             self.hideHUD()
             
-            print(self.eventsArray)
+            //print(self.eventsArray)
         })
         
         self.hideHUD()

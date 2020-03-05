@@ -440,26 +440,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQP-ep-H9v" customClass="CornerButton" customModule="CornerUI">
-                                <rect key="frame" x="132" y="553" width="150" height="137.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="LOGIN WITH TOUCH ID" image="touchIcon"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="biometricLoginAction:" destination="tEA-B2-euN" eventType="touchUpInside" id="wg3-za-tXw"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5g7-Ox-Zwe">
                                 <rect key="frame" x="70.5" y="144" width="273" height="190"/>
                                 <constraints>
@@ -468,14 +448,49 @@
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTHETICATE WITH TOUCH ID OR FACE ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fS-1k-FOw">
+                                <rect key="frame" x="56" y="720" width="302" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7t-0k-FUL">
+                                <rect key="frame" x="40" y="758" width="334" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sbx-kd-k9f"/>
+                                    <constraint firstAttribute="width" constant="334" id="vA5-HC-jNl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="tEA-B2-euN" eventType="touchUpInside" id="otz-XN-9Yf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="rQP-ep-H9v">
+                                <rect key="frame" x="157" y="600" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="S77-Cf-0jY"/>
+                                    <constraint firstAttribute="width" constant="100" id="p9p-7I-xft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" backgroundImage="faceIcon">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
+                                </state>
+                                <connections>
+                                    <action selector="biometricLoginAction:" destination="tEA-B2-euN" eventType="touchUpInside" id="wg3-za-tXw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lhi-dZ-6ob" firstAttribute="trailing" secondItem="rQP-ep-H9v" secondAttribute="trailing" constant="132" id="COn-3Z-yr4"/>
-                            <constraint firstItem="rQP-ep-H9v" firstAttribute="top" secondItem="5g7-Ox-Zwe" secondAttribute="bottom" constant="219" id="fKy-Bt-QHI"/>
-                            <constraint firstItem="rQP-ep-H9v" firstAttribute="leading" secondItem="Lhi-dZ-6ob" secondAttribute="leading" constant="132" id="igx-LB-hJE"/>
+                            <constraint firstItem="Q7t-0k-FUL" firstAttribute="top" secondItem="5fS-1k-FOw" secondAttribute="bottom" constant="20" id="8Fh-9N-Of8"/>
+                            <constraint firstItem="5fS-1k-FOw" firstAttribute="top" secondItem="rQP-ep-H9v" secondAttribute="bottom" constant="20" id="QaK-xk-Rrh"/>
+                            <constraint firstItem="5fS-1k-FOw" firstAttribute="centerX" secondItem="adA-X9-jmT" secondAttribute="centerX" id="UqW-qR-ALX"/>
+                            <constraint firstItem="Lhi-dZ-6ob" firstAttribute="bottom" secondItem="Q7t-0k-FUL" secondAttribute="bottom" constant="60" id="eOb-Wd-Fbh"/>
+                            <constraint firstItem="rQP-ep-H9v" firstAttribute="centerX" secondItem="adA-X9-jmT" secondAttribute="centerX" id="jYz-ed-ffi"/>
                             <constraint firstItem="5g7-Ox-Zwe" firstAttribute="centerX" secondItem="adA-X9-jmT" secondAttribute="centerX" id="q5R-9a-tt9"/>
                             <constraint firstItem="5g7-Ox-Zwe" firstAttribute="top" secondItem="Lhi-dZ-6ob" secondAttribute="top" constant="100" id="uhL-8O-ypQ"/>
+                            <constraint firstItem="Q7t-0k-FUL" firstAttribute="centerX" secondItem="adA-X9-jmT" secondAttribute="centerX" id="w6o-Vi-gRf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lhi-dZ-6ob"/>
                     </view>
@@ -485,12 +500,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jfw-ZS-OqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="669"/>
+            <point key="canvasLocation" x="-223.18840579710147" y="668.97321428571422"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="512" height="384"/>
-        <image name="touchIcon" width="138" height="137.5"/>
+        <image name="faceIcon" width="69.5" height="69.5"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

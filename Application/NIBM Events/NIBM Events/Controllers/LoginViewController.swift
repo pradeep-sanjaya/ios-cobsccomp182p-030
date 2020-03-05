@@ -82,6 +82,10 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
     @IBAction func loginButt(_ sender: UIButton) {
         validateEmailAndPassword()
         
+        guard emailTxt.text! != "", passwordTxt.text! != "" else {
+            return
+        }
+        
         userService.login(withEmail: emailTxt.text!, password: passwordTxt.text!) {
             [weak self] error in
             guard let strongSelf = self else { return }

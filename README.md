@@ -29,6 +29,9 @@ NIBM ID: COBSCCOMP182P-030
 - [Create a Storage Reference on iOS](https://firebase.google.com/docs/storage/ios/create-reference)
 - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
 
+### Sensors
+- [Working with Touch ID API in iOS 8 SDK](https://www.appcoda.com/touch-id-api-ios8/)
+
 ### Storyboard and View Controller
 - [How To Set Application Root View Controller Programmatically In Xcode 11](https://www.dev2qa.com/how-to-set-application-root-view-controller-programmatically-in-xcode-11/)
 - [set initial viewcontroller in appdelegate - swift](https://stackoverflow.com/questions/26753925/set-initial-viewcontroller-in-appdelegate-swift)
