@@ -137,6 +137,11 @@ class LoginViewController: BaseViewController, LoginButtonDelegate, UITextFieldD
         }
     }
     
+    @IBAction func viewAsGuestAction(_ sender: UIButton) {
+        UserMode.isAnonymous = true
+        self.setRootViewController(name: "MainTabBar")
+    }
+    
     @IBAction func getInfoAction(_ sender: UIButton) {
         
         let fbLoginManager : LoginManager = LoginManager()

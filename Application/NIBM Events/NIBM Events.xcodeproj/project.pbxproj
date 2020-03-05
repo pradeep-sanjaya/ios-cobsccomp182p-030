@@ -14,6 +14,7 @@
 		2704EF7B240C3CF7007F7573 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704EF7A240C3CF7007F7573 /* DateUtils.swift */; };
 		2741477F240C876000068727 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741477E240C876000068727 /* String+Date.swift */; };
 		27414781240C8A4400068727 /* String+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27414780240C8A4400068727 /* String+Bool.swift */; };
+		2754DDBB2411649C00A07810 /* UserMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754DDBA2411649C00A07810 /* UserMode.swift */; };
 		27560898240738D200A1CF82 /* CornerUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; };
 		27560899240738D200A1CF82 /* CornerUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27560897240738D100A1CF82 /* CornerUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2756089C24074EBD00A1CF82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756089B24074EBD00A1CF82 /* RegisterViewController.swift */; };
@@ -112,6 +113,7 @@
 		2704EF7A240C3CF7007F7573 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		2741477E240C876000068727 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		27414780240C8A4400068727 /* String+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Bool.swift"; sourceTree = "<group>"; };
+		2754DDBA2411649C00A07810 /* UserMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMode.swift; sourceTree = "<group>"; };
 		2756088D2407358700A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560897240738D100A1CF82 /* CornerUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CornerUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2756089B24074EBD00A1CF82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				27D1665724091B830081FCEA /* User.swift */,
 				27637E6C240B2E42009E3C32 /* Event.swift */,
+				2754DDBA2411649C00A07810 /* UserMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				2741477F240C876000068727 /* String+Date.swift in Sources */,
 				27637E6D240B2E42009E3C32 /* Event.swift in Sources */,
 				27637E3E240A7CC5009E3C32 /* UIViewController+Alert.swift in Sources */,
+				2754DDBB2411649C00A07810 /* UserMode.swift in Sources */,
 				27DCF6DC240FBF0B00526B69 /* BiometricAuthService.swift in Sources */,
 				27637E45240AAD1C009E3C32 /* ProfileViewController.swift in Sources */,
 				27637E73240B541C009E3C32 /* ImagePicker.swift in Sources */,

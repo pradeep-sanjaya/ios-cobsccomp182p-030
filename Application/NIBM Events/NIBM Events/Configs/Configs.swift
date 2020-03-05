@@ -3,14 +3,8 @@ import UIKit
 
 
 
-// APP NAME (Change it accordingly to the name you'll give to this app)
-let APP_NAME = "Events"
-
-
-
 // No of events in home
 let limitForRecentEventsQuery = 20
-
 
 
 // EMAIL ADDRESS TO EDIT (To get submitted events notifications)

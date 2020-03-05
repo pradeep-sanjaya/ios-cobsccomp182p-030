@@ -165,7 +165,7 @@ class SubmitEventViewController: BaseViewController,
     // MARK: - Choose image
     @IBAction func chooseImageButt(_ sender: AnyObject) {
         
-        let alert = UIAlertController(title: APP_NAME,
+        let alert = UIAlertController(title: Bundle.appName(),
                                       message: "Select source",
                                       preferredStyle: .alert)
         

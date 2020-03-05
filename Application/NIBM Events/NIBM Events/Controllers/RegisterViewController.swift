@@ -50,32 +50,34 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
-        validate()
         
-        if let email = emailTxt.text, let password = passwordTxt.text {
-            userService.createUser(email: email, password: password) {
+        if validate() {
+            userService.createUser(email: emailTxt.text!, password: passwordTxt.text!) {
                 (error) in
                 
-                self.userService.login(withEmail: email, password: password)
-                
-                self.userService.setLocalUserWithFirebaseId(name: self.nameTxt.text!, email: email, profileUrl: "")
-                
-                let user = self.userService.getLocalUser()
-                self.userService.saveUser(user: user)
-                
-                self.setRootViewController(name: "MainTabBar")
+                if error == nil {
+                    self.userService.login(withEmail: self.emailTxt.text!, password: self.passwordTxt.text!)
+                    
+                    self.userService.setLocalUserWithFirebaseId(name: self.nameTxt.text!, email: self.emailTxt.text!, profileUrl: "")
+                    
+                    let user = self.userService.getLocalUser()
+                    self.userService.saveUser(user: user)
+                    
+                    self.setRootViewController(name: "MainTabBar")
+                } else {
+                    self.presentHideAlert(withTitle: Bundle.appName(), message: "An error occurred. ")
+                }
             }
-
         }
 
     }
     
-    func validate() {
+    func validate() -> Bool {
         guard let name = nameTxt.text, name != "" else {
             print("name is empty")
             UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: false)
             nameTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: nameTxt, forValidStatus: true)
@@ -84,7 +86,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("email is empty")
             UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: false)
             emailTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: emailTxt, forValidStatus: true)
@@ -93,7 +95,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("password is empty")
             UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: false)
             passwordTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: passwordTxt, forValidStatus: true)
@@ -104,10 +106,12 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
             print("retype password is empty")
             UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: false)
             passwordRetypeTxt.becomeFirstResponder()
-            return
+            return false
         }
         
         UIViewUtils.setUnsetError(of: passwordRetypeTxt, forValidStatus: true)
+        
+        return true
     }
     
     @objc func navigationBackButton(_ sender: UIBarButtonItem) {
