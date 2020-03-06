@@ -14,7 +14,7 @@ class ProfileViewController: BaseViewController,
     @IBOutlet var fullNameTxt: UITextField!
     @IBOutlet var emailTxt: UITextField!
     @IBOutlet weak var facebookProfileTxt: UITextField!
-    @IBOutlet var updateOutlet: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     /* Variables */
     var imagePicker: ImagePicker!
@@ -26,11 +26,13 @@ class ProfileViewController: BaseViewController,
         //self.title = "Profile"
         
         // Setup container ScrollView
-        containerScrollView.contentSize = CGSize(width: containerScrollView.frame.size.width, height: updateOutlet.frame.origin.y + 250)
+        containerScrollView.contentSize = CGSize(width: containerScrollView.frame.size.width, height: logoutButton.frame.origin.y + 250)
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 
-        self.localUser = userService.getLocalUser()
+        let user = userService.getLocalUser()
+
+        self.localUser = user
         print("local user: \(self.localUser)")
         
         fullNameTxt.text = self.localUser.name
@@ -43,7 +45,6 @@ class ProfileViewController: BaseViewController,
             profileImage.kf.setImage(with: url)
         }
         
-        self.navigationController?.viewControllers.remove(at: 0)
     }
     
     

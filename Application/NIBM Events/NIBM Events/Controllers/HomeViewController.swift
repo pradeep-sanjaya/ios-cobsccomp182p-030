@@ -4,8 +4,16 @@ import AudioToolbox
 import Kingfisher
 import Firebase
 
+
+protocol ProfileButtonsDelegate {
+    func profileTapped(at index:IndexPath)
+}
+
 class EventCell: UICollectionViewCell {
     
+    var delegate:ProfileButtonsDelegate!
+    var indexPath:IndexPath!
+
     /* Views */
     @IBOutlet var eventImage: UIImageView!
     @IBOutlet var profileImage: UIImageView!
@@ -16,14 +24,20 @@ class EventCell: UICollectionViewCell {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var costLabel: UILabel!
+    
+    @IBAction func profileTapAction(_ sender: Any) {
+        self.delegate?.profileTapped(at: indexPath)
+    }
+    
 }
 
 
-class HomeViewController: UIViewController,
+class HomeViewController: BaseViewController,
     UICollectionViewDataSource,
     UICollectionViewDelegate,
     UICollectionViewDelegateFlowLayout,
-    UITextFieldDelegate
+    UITextFieldDelegate,
+    ProfileButtonsDelegate
 {
     
     /* Views */
@@ -177,15 +191,19 @@ class HomeViewController: UIViewController,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventCell", for: indexPath) as! EventCell
         
         let event = eventsArray[indexPath.row]
+        //print(event)
         
         let url = URL(string: event.image)
         cell.eventImage.kf.setImage(with: url)
                 
-        cell.profileImage.kf.setImage(with: url)
-        cell.bringSubviewToFront(cell.profileImage)
-        cell.superview?.bringSubviewToFront(cell.profileImage)
-
-
+        self.userService.getUser(token: event.user) {
+            (user:User?) in
+            if let postUser = user {
+                let profileUrl = URL(string: postUser.photoUrl)
+                cell.profileImage.kf.setImage(with: profileUrl)
+            }
+        }
+        
         // get event start date (for the labels on the left side of the event's image)
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "dd"
@@ -225,6 +243,8 @@ class HomeViewController: UIViewController,
         // get event cost
         cell.costLabel.text = event.cost.uppercased()
         
+        cell.indexPath = indexPath
+        cell.delegate = self
         
         return cell
     }
@@ -233,6 +253,18 @@ class HomeViewController: UIViewController,
         return cellSize
     }
     
+    
+    func profileTapped(at index: IndexPath) {
+         print("profile tapped at index:\(index)")
+        
+        let userViewController = storyboard?.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
+        
+        let event = eventsArray[index.row]
+        print(event)
+        userViewController.userToken = event.user
+        
+        navigationController?.pushViewController(userViewController, animated: true)
+    }
     
     // MARK: - Tap a cell to open event details view controller
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
