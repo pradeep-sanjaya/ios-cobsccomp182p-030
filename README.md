@@ -12,7 +12,7 @@ SID : 9256224
 NIBM ID: COBSCCOMP182P-030
 
 ## Screenshots
-![App Icon](Screenshots/1.app-icon.png)
+![App Icon](Screenshots/1.app-icon.png | width=100)
 ![Splash Screen](Screenshots/2.splash.png)
 ![Login](Screenshots/3.login.png)
 ![Register](Screenshots/4.register.png)
