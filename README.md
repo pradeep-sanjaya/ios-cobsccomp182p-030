@@ -11,6 +11,33 @@ SID : 9256224
 
 NIBM ID: COBSCCOMP182P-030
 
+## Screenshots
+![App Icon](Screenshots/1.app-icon.png)
+![Splash Screen](Screenshots/2.splash.png)
+![Login](Screenshots/3.login.png)
+![Register](Screenshots/4.register.png)
+![Forgot password](Screenshots/5.forgot-password.png)
+![Continue with Facebook - Grant phone permission](Screenshots/6.1.continue-with-facebook-permission.png)
+![Continue with Facebook - Grant Facebook application permission](Screenshots/6.2.continue-with-facebook-allow-application.png)
+![View as Guest](Screenshots/7.1.view-as-guest-home.png)
+![View as Guest - Posted user profile](Screenshots/7.2.view-as-guest-post-user.png)
+![View as Guest - Event details top](Screenshots/7.3.view-as-guest-event-details-top.png)
+![View as Guest - Event details bottom](Screenshots/7.3.view-as-guest-event-details-top.png)
+![View as Guest - Add event to calendar](Screenshots/7.5.view-as-guest-add-to-calendar.png)
+![View as Guest - Share](Screenshots/7.6.view-as-guest-share.png)
+![Login as Registered user](Screenshots/8.1.login-as-registered-user.png)
+![Login as Registered user - Subsequent login](Screenshots/8.2.login-as-registered-user-after-first-login.png)
+![Login as Registered user - Before access profile page](Screenshots/9.1.before-access-profile-page.png)
+![Login as Registered user - Profile page](Screenshots/9.2.profile-page.png)
+![Login as Registered user - Profile page - Pick profile image](Screenshots/9.3.pick-profile-image.png)
+![Login as Registered user - Profile page - Browse images](Screenshots/9.4.select-profile-image.png)
+![Login as Registered user - Profile page - Choose profile image](Screenshots/9.5.choose-profile-image.png)
+![Login as Registered user - Submit event - Top](Screenshots/10.1.submit-event-top.png)
+![Login as Registered user - Submit event - Bottom](Screenshots/10.2.submit-event-bottom.png)
+![Login as Registered user - Event details](Screenshots/11.login-as-registered-user-devent-details.png)
+![Events Search](Screenshots/12.login-as-registered-user-home-search.png)
+![Register for event](Screenshots/13.login-as-registered-user-register-for-event.png)
+
 ## References
 ### Alert
 - [How To: Displaying Alerts With UIAlertController In Swift](https://learnappmaking.com/uialertcontroller-alerts-swift-how-to/)
