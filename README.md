@@ -22,7 +22,7 @@ NIBM ID: COBSCCOMP182P-030
 ![View as Guest](Screenshots/7.1.view-as-guest-home.png)
 ![View as Guest - Posted user profile](Screenshots/7.2.view-as-guest-post-user.png)
 ![View as Guest - Event details top](Screenshots/7.3.view-as-guest-event-details-top.png)
-![View as Guest - Event details bottom](Screenshots/7.3.view-as-guest-event-details-top.png)
+![View as Guest - Event details bottom](Screenshots/7.4.view-as-guest-event-details-bottom.png)
 ![View as Guest - Add event to calendar](Screenshots/7.5.view-as-guest-add-to-calendar.png)
 ![View as Guest - Share](Screenshots/7.6.view-as-guest-share.png)
 ![Login as Registered user](Screenshots/8.1.login-as-registered-user.png)
